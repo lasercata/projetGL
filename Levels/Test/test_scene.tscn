@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://0t23pyw3gtfy"]
+
+[ext_resource type="Script" path="res://Levels/Test/test_scene.gd" id="1_wl4ie"]
+[ext_resource type="PackedScene" uid="uid://cd5le1v57c30r" path="res://Entities/Player/player.tscn" id="2_mvfsu"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_ik5sc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wvu2v"]
+sky_material = SubResource("ProceduralSkyMaterial_ecyma")
+
+[sub_resource type="Environment" id="Environment_x4xqt"]
+background_mode = 2
+sky = SubResource("Sky_wvu2v")
+tonemap_mode = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cwthb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaujc"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q7wwl"]
+material = SubResource("StandardMaterial3D_iaujc")
+size = Vector2(50, 50)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v13wu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_an0hy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_720iy"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyf4y"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xh8ef"]
+material = SubResource("StandardMaterial3D_cyf4y")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="Test" type="Node3D"]
+script = ExtResource("1_wl4ie")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x4xqt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_mvfsu")]
+
+[node name="floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("WorldBoundaryShape3D_cwthb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor/CollisionShape3D"]
+mesh = SubResource("PlaneMesh_q7wwl")
+
+[node name="whiteCylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+mesh = SubResource("CylinderMesh_v13wu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="whiteCylinder"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="whiteCylinder/StaticBody3D"]
+transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.999979, 0, 0, 0)
+shape = SubResource("CylinderShape3D_an0hy")
+
+[node name="blueBox" parent="." instance=ExtResource("3_ik5sc")]
+transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.999979, 0, 1.11823, -5)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="blueBox"]
+shape = SubResource("BoxShape3D_720iy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="blueBox"]
+mesh = SubResource("BoxMesh_xh8ef")
