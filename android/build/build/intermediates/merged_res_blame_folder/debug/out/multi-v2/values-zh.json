@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "com.godot.game-mergeDebugResources-17:/values-zh/values-zh.xml",
+            "outputFile": "com.godot.game-mergeDebugResources-2:/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\laszl\\OneDrive\\Documents\\test-suivant-la-doc\\android\\build\\res\\values-zh\\godot_project_name_string.xml",
+                    "source": "C:\\Pro\\GL\\projetGL\\android\\build\\res\\values-zh\\godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",
                         "startOffsets": "112",
-                        "endColumns": "70",
-                        "endOffsets": "181"
+                        "endColumns": "58",
+                        "endOffsets": "169"
                     },
                     "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "73",
-                        "endOffsets": "124"
+                        "endColumns": "61",
+                        "endOffsets": "112"
                     }
                 }
             ]

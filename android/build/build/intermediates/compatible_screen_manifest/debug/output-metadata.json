@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.example.doc_test",
+  "applicationId": "com.example.metrovr",
   "variantName": "debug",
   "elements": []
 }

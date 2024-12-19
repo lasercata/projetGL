@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.doc_test",
+  "applicationId": "com.example.metrovr",
   "variantName": "debug",
   "elements": [
     {

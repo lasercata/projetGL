@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Test-suivant-la-doc"
+config/name="MetroVR"
 run/main_scene="res://Levels/Test/test_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
