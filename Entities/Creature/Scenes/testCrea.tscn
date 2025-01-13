@@ -1,15 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://tr3a67i0kn3r"]
+[gd_scene load_steps=7 format=3 uid="uid://tr3a67i0kn3r"]
 
-[ext_resource type="Script" path="res://Entities/Creature/Scripts/creature.gd" id="1_ajrjv"]
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/creature.gd" id="1_8o1mk"]
+[ext_resource type="Script" path="res://Entities/Creature/Scenes/HPBArTest.gd" id="2_y3rvm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_edgjb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcc7a"]
 size = Vector3(1, 1.99084, 1)
 
+[sub_resource type="Gradient" id="Gradient_0d0hi"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q4www"]
+gradient = SubResource("Gradient_0d0hi")
+
 [node name="Creature" type="CharacterBody3D"]
-script = ExtResource("1_ajrjv")
-race = "Test"
+script = ExtResource("1_8o1mk")
+race = "TestCrea"
 hpMax = 20
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -18,3 +25,8 @@ mesh = SubResource("CapsuleMesh_edgjb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.10352e-05, 0)
 shape = SubResource("BoxShape3D_vcc7a")
+
+[node name="HPBar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31664, 0)
+texture = SubResource("GradientTexture2D_q4www")
+script = ExtResource("2_y3rvm")
