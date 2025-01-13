@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tr3a67i0kn3r"]
+
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/creature.gd" id="1_ajrjv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_edgjb"]
+
+[node name="Creature" type="CharacterBody3D"]
+script = ExtResource("1_ajrjv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_edgjb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
