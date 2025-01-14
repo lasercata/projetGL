@@ -11,25 +11,22 @@
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
 
 [sub_resource type="Gradient" id="Gradient_ya72f"]
-interpolation_mode = 1
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q3mf3"]
 gradient = SubResource("Gradient_ya72f")
 width = 10
 height = 1
-fill_to = Vector2(1, 0.12931)
-metadata/_snap_count = 100
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
 
 [sub_resource type="Gradient" id="Gradient_8qsk5"]
-interpolation_mode = 1
 colors = PackedColorArray(0, 0, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1slp5"]
 gradient = SubResource("Gradient_8qsk5")
 width = 10
 height = 1
-fill_to = Vector2(1, 0.0862069)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rdg41"]
 radius = 0.205

@@ -2,7 +2,7 @@ class_name Creature
 
 extends Entity
 
-@export var damage : int
+@export var damage : int = 10 # 10 is an example
 @export var attackSpeed : float
 @export var aggroRange : float
 @export var attackRange : float

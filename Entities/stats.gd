@@ -2,7 +2,7 @@ class_name Statistics
 
 extends Node
 
-@export var HP : int = 0
+@export var HP : int = 100
 @export var ATK : int = 0
 @export var DEF : int = 0
 @export var speed : int = 0
