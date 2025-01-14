@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://tr3a67i0kn3r"]
 
-[ext_resource type="Script" path="res://Entities/Creature/Scripts/creature.gd" id="1_8o1mk"]
-[ext_resource type="Script" path="res://Entities/Creature/Scenes/HPBArTest.gd" id="2_y3rvm"]
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/testCrea.gd" id="1_pp2u2"]
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBArTest.gd" id="2_y3rvm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_edgjb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcc7a"]
 size = Vector3(1, 1.99084, 1)
 
-[sub_resource type="Gradient" id="Gradient_0d0hi"]
-colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_5wonk"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q4www"]
-gradient = SubResource("Gradient_0d0hi")
+gradient = SubResource("Gradient_5wonk")
 
 [node name="Creature" type="CharacterBody3D"]
-script = ExtResource("1_8o1mk")
+script = ExtResource("1_pp2u2")
 race = "TestCrea"
 hpMax = 20
 
