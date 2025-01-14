@@ -9,6 +9,7 @@
 size = Vector3(1, 1.99084, 1)
 
 [sub_resource type="Gradient" id="Gradient_0d0hi"]
+interpolation_mode = 1
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q4www"]
