@@ -14,7 +14,9 @@ func _process(delta: float) -> void:
 	
 	var currentHp = get_parent_node_3d().hp
 	
-	print(hpMax)
+	#print(hpMax)
+	#print("Hp Max: ", currentHp/hpMax)
+	 
 	
 	texture.gradient.set_offset(0, currentHp/hpMax)
 	

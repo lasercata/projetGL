@@ -1,4 +1,8 @@
+class_name PlayerScript
+
 extends CharacterBody3D
+
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -10,9 +14,9 @@ const JUMP_VELOCITY = 4.5
 @onready var right_hand: Node3D = $RightHand
 
 # @export var name : String
-@export var stats : Statistics
-@export var manaMax : int
-var mana : int
+@export var stats : Statistics = Statistics.new()
+@export var manaMax : int = 100
+var mana : int = manaMax
 # @export var armorSet : Set
 var inventory : Array[Object]
 

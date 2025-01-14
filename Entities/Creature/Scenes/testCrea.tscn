@@ -8,11 +8,13 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcc7a"]
 size = Vector3(1, 1.99084, 1)
 
-[sub_resource type="Gradient" id="Gradient_5wonk"]
-colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
+[sub_resource type="Gradient" id="Gradient_0d0hi"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q4www"]
-gradient = SubResource("Gradient_5wonk")
+gradient = SubResource("Gradient_0d0hi")
+width = 100
+height = 20
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arb14"]
 
