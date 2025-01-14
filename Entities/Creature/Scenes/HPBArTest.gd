@@ -16,5 +16,5 @@ func _process(delta: float) -> void:
 	
 	print(hpMax)
 	
-	texture.gradient.set_offset(0, currentHp, hpMax)
+	texture.gradient.set_offset(0, currentHp/hpMax)
 	
