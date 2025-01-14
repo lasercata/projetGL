@@ -44,6 +44,9 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="Test" type="Node3D"]
 script = ExtResource("1_wl4ie")
 
+[node name="Creature" parent="." instance=ExtResource("4_euvt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2571, 2.15319, -9.43152)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x4xqt")
 
@@ -61,9 +64,6 @@ shape = SubResource("WorldBoundaryShape3D_cwthb")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor/CollisionShape3D"]
 mesh = SubResource("PlaneMesh_q7wwl")
 script = ExtResource("3_ogs0y")
-
-[node name="Creature" parent="floor/CollisionShape3D" instance=ExtResource("4_euvt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2571, 2.15319, -9.43152)
 
 [node name="whiteCylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
