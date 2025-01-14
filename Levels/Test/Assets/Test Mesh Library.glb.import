@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dfagsvh6q5whl"
-path="res://.godot/imported/Test Mesh Library.glb-e96e1c3f5e361735ba27234a0197afe9.scn"
+path="res://.godot/imported/Test Mesh Library.glb-582d7c52c25fe854c8f0ca120cb1df47.scn"
 
 [deps]
 
-source_file="res://Assets/Test Mesh Library.glb"
-dest_files=["res://.godot/imported/Test Mesh Library.glb-e96e1c3f5e361735ba27234a0197afe9.scn"]
+source_file="res://Levels/Test/Assets/Test Mesh Library.glb"
+dest_files=["res://.godot/imported/Test Mesh Library.glb-582d7c52c25fe854c8f0ca120cb1df47.scn"]
 
 [params]
 

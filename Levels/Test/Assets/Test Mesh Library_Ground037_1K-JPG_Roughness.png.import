@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diqdlgwq1hoxo"
-path.s3tc="res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Roughness.png-dbcf49e4a1d25a3a760e2787b4e1a1ff.s3tc.ctex"
+path.s3tc="res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Roughness.png-e998267ef89bd235c62cb44dbc208e78.s3tc.ctex"
+path.etc2="res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Roughness.png-e998267ef89bd235c62cb44dbc208e78.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Test Mesh Library_Ground037_1K-JPG_Roughness.png"
-dest_files=["res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Roughness.png-dbcf49e4a1d25a3a760e2787b4e1a1ff.s3tc.ctex"]
+source_file="res://Levels/Test/Assets/Test Mesh Library_Ground037_1K-JPG_Roughness.png"
+dest_files=["res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Roughness.png-e998267ef89bd235c62cb44dbc208e78.s3tc.ctex", "res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Roughness.png-e998267ef89bd235c62cb44dbc208e78.etc2.ctex"]
 
 [params]
 

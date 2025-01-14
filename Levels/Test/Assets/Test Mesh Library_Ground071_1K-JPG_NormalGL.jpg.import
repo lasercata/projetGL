@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xqjthj0tc7od"
-path.s3tc="res://.godot/imported/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg-260b789708859d955278a0f6f390f50a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg-dc489c392615491a40be4498f51bcb2f.s3tc.ctex"
+path.etc2="res://.godot/imported/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg-dc489c392615491a40be4498f51bcb2f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg-260b789708859d955278a0f6f390f50a.s3tc.ctex"]
+source_file="res://Levels/Test/Assets/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg-dc489c392615491a40be4498f51bcb2f.s3tc.ctex", "res://.godot/imported/Test Mesh Library_Ground071_1K-JPG_NormalGL.jpg-dc489c392615491a40be4498f51bcb2f.etc2.ctex"]
 
 [params]
 

@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fw8hq6kikum5"
-path.s3tc="res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_Color.jpg-868d5fb5a83e5584924f253154ca6544.s3tc.ctex"
+path.s3tc="res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_Color.jpg-11a871e60b0c80b07d246b4561d841b4.s3tc.ctex"
+path.etc2="res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_Color.jpg-11a871e60b0c80b07d246b4561d841b4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -14,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Test Mesh Library_Bricks066_1K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_Color.jpg-868d5fb5a83e5584924f253154ca6544.s3tc.ctex"]
+source_file="res://Levels/Test/Assets/Test Mesh Library_Bricks066_1K-JPG_Color.jpg"
+dest_files=["res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_Color.jpg-11a871e60b0c80b07d246b4561d841b4.s3tc.ctex", "res://.godot/imported/Test Mesh Library_Bricks066_1K-JPG_Color.jpg-11a871e60b0c80b07d246b4561d841b4.etc2.ctex"]
 
 [params]
 

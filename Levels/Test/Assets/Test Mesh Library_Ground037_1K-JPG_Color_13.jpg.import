@@ -3,16 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdtr07gju035u"
-path.s3tc="res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg-c8431a08aee5c7331315de4e3f5dd9b3.s3tc.ctex"
+path.s3tc="res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg-857cf605fd05fe2d923948c54b372389.s3tc.ctex"
+path.etc2="res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg-857cf605fd05fe2d923948c54b372389.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg"
-dest_files=["res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg-c8431a08aee5c7331315de4e3f5dd9b3.s3tc.ctex"]
+source_file="res://Levels/Test/Assets/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg"
+dest_files=["res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg-857cf605fd05fe2d923948c54b372389.s3tc.ctex", "res://.godot/imported/Test Mesh Library_Ground037_1K-JPG_Color_13.jpg-857cf605fd05fe2d923948c54b372389.etc2.ctex"]
 
 [params]
 
