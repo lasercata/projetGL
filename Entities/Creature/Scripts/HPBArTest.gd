@@ -1,6 +1,9 @@
 extends Sprite3D
 
 
+var hpMax : float
+var currentHp : float
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,9 +13,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 
 
-	var hpMax = get_parent_node_3d().hpMax
+	hpMax = get_parent_node_3d().hpMax
 	
-	var currentHp = get_parent_node_3d().hp
+	currentHp = get_parent_node_3d().hp
 	
 	#print(hpMax)
 	#print("Hp Max: ", currentHp/hpMax)
