@@ -16,14 +16,12 @@ func _process(delta: float) -> void:
 	if is_on_floor() == false:
 		velocity += get_gravity() * delta
 	
-	if is_on_floor() == true:
-		velocity.y = JUMP_VELOCITY
 		
 	var player = get_parent_node_3d().get_node("Player")
 	var monster_position = global_position
 	var player_position = player.global_position
 		
-	if isPlayerNearby(player) < 10:
+	if isPlayerNearby(player) > 1.5 and isPlayerNearby(player) < 15 :
 				
 		var direction := (transform.basis * Vector3(player_position[0] - position.x, 0, player_position[2] - position.z)).normalized()
 		
