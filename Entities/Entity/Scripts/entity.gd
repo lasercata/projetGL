@@ -27,8 +27,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if is_on_floor() == false:
 		velocity += get_gravity() * delta
+		
+	if is_on_floor() == true:
+		velocity.y = 4
 		
 	move_and_slide()
 	
