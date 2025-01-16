@@ -22,6 +22,3 @@ script = ExtResource("4_n6760")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeverStick2/GrabPoint"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000793457, -0.0718384, -0.00122833)
 shape = SubResource("BoxShape3D_mhkkf")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549582, 3.0393)

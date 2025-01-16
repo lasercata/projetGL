@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://0t23pyw3gtfy"]
+[gd_scene load_steps=19 format=3 uid="uid://0t23pyw3gtfy"]
 
 [ext_resource type="Script" path="res://Levels/Test/test_scene.gd" id="1_wl4ie"]
 [ext_resource type="PackedScene" uid="uid://cd5le1v57c30r" path="res://Entities/Player/player.tscn" id="2_mvfsu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Levels/Test/mesh_instance_3d.gd" id="3_ogs0y"]
 [ext_resource type="PackedScene" uid="uid://tr3a67i0kn3r" path="res://Entities/Creature/Scenes/testCrea.tscn" id="4_euvt4"]
 [ext_resource type="PackedScene" uid="uid://cv61u1e5ae2ib" path="res://Levels/Test/Scenes/grid_map_test.tscn" id="5_7l8hj"]
+[ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="7_6u1dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -79,7 +80,7 @@ transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.9999
 shape = SubResource("CylinderShape3D_an0hy")
 
 [node name="blueBox" parent="." instance=ExtResource("3_ik5sc")]
-transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.999979, 0, 1.11823, -5)
+transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.999979, 0, 1, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="blueBox"]
 shape = SubResource("BoxShape3D_720iy")
@@ -89,3 +90,6 @@ mesh = SubResource("BoxMesh_xh8ef")
 
 [node name="GridMapTest" parent="." instance=ExtResource("5_7l8hj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97147, -2.99652, 0)
+
+[node name="Node3D" parent="." instance=ExtResource("7_6u1dy")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -29.477, 0.640042, 0)
