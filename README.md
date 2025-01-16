@@ -26,7 +26,7 @@ In order to install the project and build the game in yout VR headset, you need 
 
 #### Create the export preset
 To be able to build the project into an apk file, we need to create an android runnable export preset :
-![alt text](doc/image.png)
+![alt text](doc/image.png)  
 After that, the gradle build needs to be enabled :
 ![alt text](doc/image1.png)
 Then, OpenXR must be selected as XR Mode in the XR Features menu
