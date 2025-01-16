@@ -35,7 +35,7 @@ Finally the Meta Plugin must be enabled :
 ![alt text](doc/image3.png)
 
 #### Building on your headset
-Now that the preset has been configured, all you need to do is to build the game on your Meta Quest with the remote debug option :
+Now that the preset has been configured, all you need to do is to build the game on your Meta Quest with the remote debug option :  
 ![alt text](doc/image4.png)
 
 
