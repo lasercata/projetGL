@@ -126,6 +126,9 @@ func _ready():
 		if grab_point:
 			_grab_points.push_back(grab_point)
 
+func _process(delta: float) -> void:
+	if position.distance_to(get_parent().position) > 3 :
+		position = Vector3(0,1,0)
 
 # Called when the node exits the tree
 func _exit_tree():

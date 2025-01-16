@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwru8wjnyjiks"]
+
+[ext_resource type="PackedScene" uid="uid://b4pfldafv073g" path="res://Levels/Test/Assets/LeverBase.glb" id="1_ul1hn"]
+[ext_resource type="PackedScene" uid="uid://b5lstjedrvv3y" path="res://Levels/Test/Assets/LeverStick.glb" id="2_7hekm"]
+[ext_resource type="Script" path="res://Levels/Test/Assets/lever_stick.gd" id="3_1bpxs"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="4_n6760"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mhkkf"]
+size = Vector3(0.150757, 0.141235, 0.166428)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LeverBase2" parent="." instance=ExtResource("1_ul1hn")]
+
+[node name="LeverStick2" parent="." instance=ExtResource("2_7hekm")]
+script = ExtResource("3_1bpxs")
+
+[node name="GrabPoint" type="RigidBody3D" parent="LeverStick2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("4_n6760")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverStick2/GrabPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000793457, -0.0718384, -0.00122833)
+shape = SubResource("BoxShape3D_mhkkf")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549582, 3.0393)
