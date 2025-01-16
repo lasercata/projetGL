@@ -36,6 +36,23 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 import/blender/enabled=false
 
+[global_group]
+
+Sword=""
+
+[godot_xr_tools]
+
+player/standard_height=1.7
+
+[layer_names]
+
+3d_physics/layer_1="static_world"
+3d_physics/layer_2="dynamic_world"
+3d_physics/layer_3="object"
+3d_physics/layer_4="mobs"
+3d_physics/layer_17="held_object"
+3d_physics/layer_20="player_body"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
