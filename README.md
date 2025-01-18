@@ -4,7 +4,7 @@ This is a virtual reality video game developped for a software engineering proje
   
 Thank you for playing our game on behalf of the whole team, if you want to contact us, feel free to join our [official discord server](https://youtu.be/dQw4w9WgXcQ). Enjoy ;)  
 
-## Content table
+# Content table
 - [Installation guide](#installation-guide)
     - [Build your own apk](#build-your-own-apk)
         - [Prerequisites](#prerequisites)
@@ -13,13 +13,13 @@ Thank you for playing our game on behalf of the whole team, if you want to conta
     - [Use an already existing apk](#use-an-already-existing-apk)
 - [Programming guide](#programming-guide)
 
-## Installation guide
+# Installation guide
 
 In order to install the project and build the game in yout VR headset, you need the game ``.apk`` file. To doo so, you have the choice between pulling the project and compiling the ``.apk`` file and building it on the VR headset with Godot or if you already have the ``.apk`` file, you can directly build it on the headset with the [Meta Quest Developer Hub](https://developers.meta.com/horizon/documentation/unity/ts-odh/) app.
 
-### Build your own apk
+## Build your own apk
 
-#### Prerequisites
+### Prerequisites
 - Install [Godot engine ``v4.3``](https://godotengine.org)
 - Install [OpenJDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - Install [Android studio](https://developer.android.com/studio?hl=fr) and make sure to run it once in order to create all the configuration files :  
@@ -30,7 +30,7 @@ In order to install the project and build the game in yout VR headset, you need 
         ./studio.sh
         ```
 
-#### Set the SDK paths
+### Set the SDK paths
 After installing the prerequisites, you need to configure the SDK paths in Godot's Editor settings :  
 ![alt text](doc/image6.png)  
 Scroll down to the section where the Android settings are located :  
@@ -46,7 +46,7 @@ Then you will need to set the right SDK paths, if you let the default ones durin
     - Java SDK Path : ``/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home``
     - Android SDK Path : ``/Users/{your_username}/Library/Android/sdk ``
 
-#### Create the export preset
+### Create the export preset
 To be able to build the project into an apk file, we need to create an android runnable export preset :
 ![alt text](doc/image.png)  
 After that, the gradle build needs to be enabled :
@@ -56,7 +56,7 @@ Then, OpenXR must be selected as XR Mode in the XR Features menu :
 Finally the Meta Plugin must be enabled :
 ![alt text](doc/image3.png)
 
-#### Building on your headset
+### Building on your headset
 Now that the preset has been configured, all you need to do is to build the game on your Meta Quest with the remote debug option :  
 ![alt text](doc/image4.png)  
   
@@ -68,9 +68,39 @@ adb uninstall {your_project}
 
 
 
-### Use an already existing apk
+## Use an already existing apk
 If you already have an apk file on your computer, you only need to launch the Meta Quest Developer Hub app and to add the build : 
 ![alt text](doc/image5.png)
 
 
-## Programming guide
+# Programming guide
+
+## How to create an asset in Blender
+
+## How to add an asset
+
+## How to create and use a GridMap
+
+## How to create a pickable object
+
+First of all, in order to be able to pick up objects, you need to add the pickup function to the hands nodes. This has already been done in the previous versions so don't worry about this step anymore.  
+
+To create the object you want to be able to pick up, you need to create a new inheritted scene, and chose the base scene in ``addons/godot-xr-tools/objects/pickable.tscn`` :  
+![alt text](doc/image8.png)   
+![alt text](doc/image9.png)   
+You now have a new scene which is a child of the pickable object scene. However, this new scene does not have a shape, so you need to create a new meshInstance3D and add a shape to the collisionShape3D.  
+![alt text](doc/image10.png)  
+Finally, for a better experience, you can add grabpoints to define the points from where you grab the object. To do so, you first need to instantiate a child scene and choose the ``grab_point_hand`` scene (left or right depending on the hand). The grab point will be created but will not appear in the scene because you need to toggle visibility :  
+![alt text](doc/image11.png)  
+Then, all you need to do is place the grab point wherever you like on the object. For a better experience, you can even change the pose of the hand to match the ocject shape or purpose by choosing a pose in the ``addons/godot-xr-tools/hands/animations`` folder :  
+![alt text](doc/image12.png)    
+  
+## How to create a melee weapon
+
+## How to create a range weapon
+
+## How to create a spell
+
+## How to create an enemy
+
+## How to create a UI
