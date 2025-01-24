@@ -1,5 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://0t23pyw3gtfy"]
-
+[gd_scene load_steps=18 format=3 uid="uid://0t23pyw3gtfy"]
 
 [ext_resource type="Script" path="res://Levels/Test/test_scene.gd" id="1_wl4ie"]
 [ext_resource type="PackedScene" uid="uid://cd5le1v57c30r" path="res://Entities/Player/player.tscn" id="2_mvfsu"]
@@ -47,7 +46,7 @@ size = Vector3(0.1, 0.1, 0.1)
 script = ExtResource("1_wl4ie")
 
 [node name="Creature" parent="." instance=ExtResource("4_euvt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2571, 2.15319, -9.43152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2571, -0.179276, -9.43152)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x4xqt")

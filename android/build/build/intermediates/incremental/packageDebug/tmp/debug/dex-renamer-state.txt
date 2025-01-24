@@ -1,9 +1,9 @@
-#Thu Dec 19 00:39:45 CET 2024
-base.2=C\:\\Pro\\GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+#Fri Jan 17 15:02:14 CET 2025
+base.2=/home/ethan/Godot/projetGL/android/build/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
 path.2=6/classes.dex
-base.1=C\:\\Pro\\GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=/home/ethan/Godot/projetGL/android/build/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 path.1=0/classes.dex
-base.0=C\:\\Pro\\GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=/home/ethan/Godot/projetGL/android/build/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex

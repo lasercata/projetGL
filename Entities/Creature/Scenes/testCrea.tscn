@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/testCrea.gd" id="1_pp2u2"]
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBArTest.gd" id="2_y3rvm"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_edgjb"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vcc7a"]
-size = Vector3(1, 1.99084, 1)
+[ext_resource type="PackedScene" uid="uid://dqmf2ca661lb3" path="res://Entities/Creature/Assets/minecraft_-_wolf.glb" id="3_25nqf"]
 
 [sub_resource type="Gradient" id="Gradient_0d0hi"]
 interpolation_mode = 1
@@ -17,19 +13,14 @@ gradient = SubResource("Gradient_0d0hi")
 width = 100
 height = 20
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arb14"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4ovl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogys0"]
 
 [node name="Creature" type="CharacterBody3D"]
 script = ExtResource("1_pp2u2")
 race = "TestCrea"
 hpMax = 20
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_edgjb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.10352e-05, 0)
-shape = SubResource("BoxShape3D_vcc7a")
 
 [node name="HPBar" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31664, 0)
@@ -39,6 +30,12 @@ script = ExtResource("2_y3rvm")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("CapsuleShape3D_arb14")
+shape = SubResource("BoxShape3D_l4ovl")
+
+[node name="WolfSprite" parent="." instance=ExtResource("3_25nqf")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ogys0")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
