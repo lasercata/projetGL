@@ -15,8 +15,8 @@ func _process(delta):
 	
 	#value is between 0 (0 hp) and 1 (full hp)
 	texture.gradient.set_offset(1,current_hp/maxHP)
-	print(current_hp/maxHP)
+	#print(current_hp/maxHP)
 
 
 func _on_player_hit_by_ennemy(damage):
-	current_hp -= damage;
+	current_hp -= 50;

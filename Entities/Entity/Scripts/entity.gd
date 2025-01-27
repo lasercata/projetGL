@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 @export var race : String # Enum ?
 @export var description : String
-@export var hpMax : int
+@export var hpMax : int = 100
 var hp : int
 @export var isInvincible : bool
 @export var isTrackingPlayer : bool # ?
@@ -21,8 +21,8 @@ func targeted_movement() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hp = hpMax; #hp initialization
-
+	#hp = hpMax; #hp initialization
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

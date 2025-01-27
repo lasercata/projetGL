@@ -14,3 +14,8 @@ func _ready():
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialized, please check if your headset is connected")
+
+func _unhandled_input(event):
+	if event.is_action_pressed("by_button"):
+		# This restarts the current scene.
+		get_tree().reload_current_scene()
