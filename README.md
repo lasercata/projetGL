@@ -201,7 +201,7 @@ For the script:
 
 ### Button Functionality  
 
-You also need a script for the menu buttons. Here’s an example of a script that sends a signal when a button is clicked:  
+You also need a script for the menu buttons. Here’s an example of a script when a button sends a signal after being clicked:  
 
 - **Reset Button**: When clicked, it reloads the scene (line 16) and resumes the game (line 15). Resuming the game also closes the menu when the scene is reloaded.  
 
