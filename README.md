@@ -134,3 +134,10 @@ Then, all you need to do is place the grab point wherever you like on the object
 ## How to create an enemy
 
 ## How to create a UI
+
+First of all, you need to add the special node "Viewport2Din3D" (which is included in the XRTools plugin) where you want. It's useful in order to make an interactable screen. For example, we wanted to have our in game menu fixed to our left hand so we put it as its son :
+
+![alt text](doc/createUI1.png) 
+
+![alt text](doc/createUI2.png) 
+
