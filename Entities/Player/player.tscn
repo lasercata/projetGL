@@ -92,6 +92,7 @@ texture = SubResource("GradientTexture2D_1slp5")
 script = ExtResource("7_e8i6j")
 
 [node name="FunctionPointer" parent="RightHand" instance=ExtResource("9_bkp5h")]
+visible = false
 show_laser = 2
 laser_length = 1
 

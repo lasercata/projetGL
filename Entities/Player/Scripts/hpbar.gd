@@ -9,6 +9,7 @@ var maxHP : float
 func _ready():
 	current_hp = player.stats.HP;
 	maxHP = player.stats.HP;
+	texture.gradient.set_offset(1,current_hp/maxHP)
 
 func _process(delta):
 	#print(current_hp/player.stats.HP)
