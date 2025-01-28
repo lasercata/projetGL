@@ -135,9 +135,75 @@ Then, all you need to do is place the grab point wherever you like on the object
 
 ## How to create a UI
 
-First of all, you need to add the special node "Viewport2Din3D" (which is included in the XRTools plugin) where you want. It's useful in order to make an interactable screen. For example, we wanted to have our in game menu fixed to our left hand so we put it as its son :
+## How to Create an Interactable Screen with Viewport2Din3D  
 
-![alt text](doc/createUI1.png) 
+First of all, you need to add the special node **`Viewport2Din3D`** (included in the XRTools plugin) wherever you want. It's useful for creating an interactable screen. For example, we wanted our in-game menu to be fixed to our left hand, so we made it a child of the hand node:  
 
-![alt text](doc/createUI2.png) 
+![Creating the UI - Step 1](doc/createUI1.png)  
+![Creating the UI - Step 2](doc/createUI2.png)  
+
+Once created, you need to adjust some parameters to achieve the desired result. In the following image, the main properties to change are highlighted:  
+
+1. **Screen Size**: You can adjust it as you wish, but it's better if it's close to the **Viewport Size** (3) to maintain a consistent resolution.  
+2. **Viewport Size**: This defines the resolution of the screen.  
+3. **Scaling**: You can create a large screen and reduce its size using the scale property (4) without losing quality.  
+4. **Collision Layers**: Pay attention to (5); disable the collision layers you don't want the screen to interact with.  
+
+The **most important property** is (2), as it defines the 2D scene displayed on the screen.  
+
+![Creating the UI - Step 3](doc/createUI3.png)  
+
+---
+
+### Designing the Menu  
+
+To create the menu, you need a **Node2D** and a **Control** node. Optionally, you can add a **ColorRect** node to enhance its appearance. Next, add a **MarginContainer** node for your buttons or other UI controls. You can fine-tune its position using anchors if you want your buttons in specific locations.  
+
+Add a **VBoxContainer** (or **HBoxContainer**) to group multiple Control nodes (e.g., buttons, checkboxes, progress bars) for easier alignment and consistent spacing.  
+
+![Creating the UI - Step 4](doc/createUI4.png)  
+![Creating the UI - Step 5](doc/createUI5.png)  
+
+After finishing the menu and setting your 2D scene in the viewport, it’s recommended to:  
+
+1. **Activate "Unshaded" in Rendering**: This will make your screen glow.  
+2. **Disable "Visible" in Visibility**: This hides the screen unless needed.  
+3. **Set Process Mode to "When Paused"**: This ensures the screen works only when the game is paused (e.g., for an in-game menu).  
+
+![Creating the UI - Step 6](doc/createUI6.png)  
+
+---
+
+### Adding a Function Pointer  
+
+Finally, you can add a **FunctionPointer** as a child of your hand node. This helps the UI by indicating which button you are about to click. You can also disable the **Visible** property, showing the pointer only when the menu is open (via the following script).  
+
+- **Show Laser Option**: Specifies when the laser is visible (e.g., `Collide` means it appears only when colliding with a UI object like Collision Mask 23 or a Pointable Object like Collision Mask 21).  
+- **Laser Length Option**: Determines how the laser is cut (e.g., `Collide` stops the laser when it collides with something).  
+- **Collision Masks**: Manage collisions using the appropriate masks.  
+
+![Creating the UI - Step 10](doc/createUI10.png)  
+
+---
+
+### The Menu Script  
+
+For the script:  
+
+- First, define variables with the `@onready` keyword to initialize them after the game loads.  
+- When pressing the **menu button** (see a specific section on how to link a controller button), the game is paused with line 23.  
+- Lines 24 and 25 make the screen and pointer visible.  
+
+![Menu Script - Step 1](doc/createUI7.png)  
+![Menu Script - Step 2](doc/createUI8.png)  
+
+---
+
+### Button Functionality  
+
+You also need a script for the menu buttons. Here’s an example of a script that sends a signal when a button is clicked:  
+
+- **Reset Button**: When clicked, it reloads the scene (line 16) and resumes the game (line 15). Resuming the game also closes the menu when the scene is reloaded.  
+
+![Menu Script - Step 3](doc/createUI9.png)  
 
