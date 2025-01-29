@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://tr3a67i0kn3r"]
 
 [ext_resource type="Script" path="res://Entities/Creature/Scripts/testCrea.gd" id="1_pp2u2"]
-[ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBArTest.gd" id="2_y3rvm"]
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/HPBarTest.gd" id="2_y3rvm"]
 [ext_resource type="PackedScene" uid="uid://dqmf2ca661lb3" path="res://Entities/Creature/Assets/minecraft_-_wolf.glb" id="3_25nqf"]
 
 [sub_resource type="Gradient" id="Gradient_0d0hi"]
@@ -37,5 +37,7 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ogys0")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
