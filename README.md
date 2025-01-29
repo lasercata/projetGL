@@ -191,8 +191,8 @@ Finally, you can add a **FunctionPointer** as a child of your hand node. This he
 For the script:  
 
 - First, define variables with the `@onready` keyword to initialize them after the game loads.  
-- When pressing the **menu button** (see a specific section on how to link a controller button), the game is paused (or resumes if we are closing the menu) with line 23.  
-- Lines 24 and 25 make the screen and pointer visible (or invisible if we are closing the menu).  
+- When pressing the **menu button** (see a specific section on how to link a controller button), the game is paused with line 23.  
+- Lines 24 and 25 make the screen and pointer visible.  
 
 ![Menu Script - Step 1](doc/createUI7.png)  
 ![Menu Script - Step 2](doc/createUI8.png)  
@@ -201,7 +201,7 @@ For the script:
 
 ### Button Functionality  
 
-You also need a script for the menu buttons. Here’s an example of a script when a button sends a signal after being clicked:  
+You also need a script for the menu buttons. Here’s an example of a script that sends a signal when a button is clicked:  
 
 - **Reset Button**: When clicked, it reloads the scene (line 16) and resumes the game (line 15). Resuming the game also closes the menu when the scene is reloaded.  
 

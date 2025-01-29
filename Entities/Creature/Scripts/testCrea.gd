@@ -4,6 +4,8 @@ extends Creature
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4
+var hp : int
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,3 +55,5 @@ func isPlayerNearby(player: Node3D) -> int:
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	hp -= 3 # prends 3 de dégats à chaque fois que qqchose entre dans sa zone
+	if (hp <= 0):
+		queue_free()
