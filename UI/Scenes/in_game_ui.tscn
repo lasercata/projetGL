@@ -40,7 +40,7 @@ layout_mode = 2
 text = "Reset"
 script = ExtResource("1_f280e")
 
-[node name="Button" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+[node name="ParametersButton" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Parameters"
 
@@ -49,4 +49,5 @@ layout_mode = 2
 text = "Quit
 "
 
-[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/ResetButton" to="Control/ColorRect/MarginContainer/VBoxContainer/ResetButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/ResetButton" to="Control/ColorRect/MarginContainer/VBoxContainer/ResetButton" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="Control/ColorRect/MarginContainer/VBoxContainer/QuitButton" to="Control/ColorRect/MarginContainer/VBoxContainer/ResetButton" method="_on_quit_button_pressed"]

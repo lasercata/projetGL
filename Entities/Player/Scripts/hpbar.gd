@@ -20,4 +20,6 @@ func _process(delta):
 
 
 func _on_player_hit_by_ennemy(damage):
-	current_hp -= 50;
+	current_hp -= damage;
+	if (current_hp <= 0):
+		get_tree().reload_current_scene()

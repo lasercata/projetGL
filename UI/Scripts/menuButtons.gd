@@ -11,6 +11,10 @@ func _process(delta):
 	pass
 
 
-func _on_pressed():
+func _on_reset_button_pressed():
 	get_tree().paused = !get_tree().paused
 	get_tree().reload_current_scene()
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()

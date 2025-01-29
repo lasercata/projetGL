@@ -5,7 +5,6 @@ extends CharacterBody3D
 @export var race : String # Enum ?
 @export var description : String
 @export var hpMax : int = 100
-var hp : int
 @export var isInvincible : bool
 @export var isTrackingPlayer : bool # ?
 
