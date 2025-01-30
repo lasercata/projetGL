@@ -1,14 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://cd5le1v57c30r"]
+[gd_scene load_steps=18 format=3 uid="uid://cd5le1v57c30r"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/collisionScript.gd" id="1_h3dvg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="1_v7mbb"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_1ym5p"]
 [ext_resource type="PackedScene" uid="uid://bj1aas6kty3qx" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_tac_glove_low.tscn" id="3_dnfyn"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_qsoh7"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_if4xl"]
 [ext_resource type="PackedScene" uid="uid://c2uvwvdlsfuep" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_tac_glove_low.tscn" id="5_wcfh6"]
+[ext_resource type="PackedScene" uid="uid://cr3f307xa3bfq" path="res://UI/Scenes/in_game_ui.tscn" id="6_28e5p"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_kh7mg"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/hpbar.gd" id="6_ypaab"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_bkp5h"]
 
 [sub_resource type="Gradient" id="Gradient_ya72f"]
 interpolation_mode = 1
@@ -39,9 +42,11 @@ height = 1.8
 script = ExtResource("1_h3dvg")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="LeftHand" type="XRController3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
@@ -53,7 +58,19 @@ max_speed = 10.0
 [node name="LeftPhysicsHand" parent="LeftHand" instance=ExtResource("3_dnfyn")]
 collision_layer = 0
 
+[node name="Viewport2Din3D" parent="LeftHand" instance=ExtResource("5_if4xl")]
+process_mode = 2
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.266191, -0.616513)
+visible = false
+screen_size = Vector2(1280, 780)
+collision_layer = 5242880
+scene = ExtResource("6_28e5p")
+viewport_size = Vector2(1150, 650)
+unshaded = true
+scene_properties_keys = PackedStringArray()
+
 [node name="RightHand" type="XRController3D" parent="."]
+process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
@@ -76,6 +93,11 @@ transform = Transform3D(0.127065, 0, 0.991894, 0, 1, 0, -0.991894, 0, 0.127065, 
 texture = SubResource("GradientTexture2D_1slp5")
 script = ExtResource("7_e8i6j")
 
+[node name="FunctionPointer" parent="RightHand" instance=ExtResource("9_bkp5h")]
+visible = false
+show_laser = 2
+laser_length = 1
+
 [node name="PlayerBody" parent="." instance=ExtResource("6_kh7mg")]
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -88,6 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485554, 0)
 shape = SubResource("CapsuleShape3D_rdg41")
 
 [connection signal="hit_by_ennemy" from="." to="RightHand/HPBar" method="_on_player_hit_by_ennemy"]
+[connection signal="button_pressed" from="LeftHand" to="." method="_on_left_hand_button_pressed"]
 [connection signal="button_pressed" from="RightHand" to="." method="_on_right_hand_button_pressed"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
