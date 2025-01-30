@@ -91,5 +91,5 @@ mesh = SubResource("BoxMesh_xh8ef")
 [node name="GridMapTest" parent="." instance=ExtResource("5_7l8hj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97147, -2.99652, 0)
 
-[node name="Node3D" parent="." instance=ExtResource("7_6u1dy")]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -29.477, 0.640042, 0)
+[node name="Lever" parent="." instance=ExtResource("7_6u1dy")]
+transform = Transform3D(2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0, 1.33227e-15, 4.47035e-08, -0.5, -29.4746, 2.21277, 0)
