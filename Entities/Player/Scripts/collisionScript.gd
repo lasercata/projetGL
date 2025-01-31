@@ -15,12 +15,6 @@ func _on_right_hand_button_pressed(name):
 	if name == "by_button":
 		get_tree().reload_current_scene()
 
-func _on_right_hand_button_pressed(name):
-	#if name == "by_button":
-	#	get_tree().reload_current_scene()
-	pass
-
-
 func _on_left_hand_button_pressed(name):
 	if name == "menu_button":
 		get_tree().paused = !get_tree().paused
