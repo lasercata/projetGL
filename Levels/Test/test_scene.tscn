@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mf7sr62wde8x" path="res://Levels/Test/Scenes/tool_board.tscn" id="4_j4p06"]
 [ext_resource type="PackedScene" uid="uid://cv61u1e5ae2ib" path="res://Levels/Test/Scenes/grid_map_test.tscn" id="5_7l8hj"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="7_wfsy7"]
-[ext_resource type="PackedScene" uid="uid://ci42hw60qc84r" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="8_8tdhb"]
+[ext_resource type="PackedScene" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="8_8tdhb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
