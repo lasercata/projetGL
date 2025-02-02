@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.godot.game-mergeDebugResources-17:/values-en/values-en.xml",
+            "outputFile": "com.godot.game-mergeDebugResources-2:/values-en/values-en.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\doria\\Documents\\GitHub\\projetGL\\android\\build\\res\\values-en\\godot_project_name_string.xml",
+                    "source": "C:\\Pro\\GL\\projetGL\\android\\build\\res\\values-en\\godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",

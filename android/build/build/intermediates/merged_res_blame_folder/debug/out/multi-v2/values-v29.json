@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.godot.game-mergeDebugResources-17:/values-v29/values-v29.xml",
+            "outputFile": "com.godot.game-mergeDebugResources-2:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\doria\\.gradle\\caches\\transforms-3\\dd89130c4a8ca50a04569d2aa68e9e1e\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-v29\\values-v29.xml",
+                    "source": "C:\\Users\\Ychaa\\.gradle\\caches\\transforms-3\\dd89130c4a8ca50a04569d2aa68e9e1e\\transformed\\jetified-core-splashscreen-1.0.1\\res\\values-v29\\values-v29.xml",
                     "from": {
                         "startLines": "2,7",
                         "startColumns": "4,4",
