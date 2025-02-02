@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ditavlaisbxfw"
+=======
+uid="uid://du5hn2ecy2liw"
+>>>>>>> climb
 path="res://.godot/imported/image8.png-6f8df06428f036c455fc08a8e7026826.ctex"
 metadata={
 "vram_texture": false

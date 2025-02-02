@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_1ym5p"]
 [ext_resource type="PackedScene" uid="uid://bj1aas6kty3qx" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_physics_tac_glove_low.tscn" id="3_dnfyn"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_qsoh7"]
+[ext_resource type="PackedScene" uid="uid://bxm1ply47vaan" path="res://addons/godot-xr-tools/functions/movement_climb.tscn" id="5_ap4jk"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_if4xl"]
 [ext_resource type="PackedScene" uid="uid://c2uvwvdlsfuep" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_physics_tac_glove_low.tscn" id="5_wcfh6"]
 [ext_resource type="PackedScene" path="res://UI/Scenes/in_game_ui.tscn" id="6_28e5p"]
@@ -66,6 +67,8 @@ collision_layer = 5242880
 scene = ExtResource("6_28e5p")
 viewport_size = Vector2(1150, 650)
 unshaded = true
+
+[node name="MovementClimb" parent="LeftHand" instance=ExtResource("5_ap4jk")]
 
 [node name="RightHand" type="XRController3D" parent="."]
 process_mode = 3

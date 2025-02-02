@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cxt52fkfxlh07"
-=======
-uid="uid://c64217oowa1ld"
->>>>>>> climb
-path="res://.godot/imported/image7.png-b780247b71890b4e73e84c51b972a9a7.ctex"
+uid="uid://x4d2kekkvefa"
+path="res://.godot/imported/image14.png-941ad3f5dc98cd4d56cbf5e8ab13ca15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://doc/image7.png"
-dest_files=["res://.godot/imported/image7.png-b780247b71890b4e73e84c51b972a9a7.ctex"]
+source_file="res://doc/image14.png"
+dest_files=["res://.godot/imported/image14.png-941ad3f5dc98cd4d56cbf5e8ab13ca15.ctex"]
 
 [params]
 
