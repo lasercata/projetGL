@@ -126,7 +126,6 @@ func _ready():
 		if grab_point:
 			_grab_points.push_back(grab_point)
 
-
 # Called when the node exits the tree
 func _exit_tree():
 	# Skip if not picked up

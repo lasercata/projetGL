@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cv61u1e5ae2ib" path="res://Levels/Test/Scenes/grid_map_test.tscn" id="5_7l8hj"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="7_wfsy7"]
 [ext_resource type="PackedScene" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="8_8tdhb"]
+[ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="7_6u1dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -174,3 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01961, 15.0641, 13.6872)
 
 [node name="ClimbStoneObject26" parent="." instance=ExtResource("8_8tdhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81852, 15.3071, 13.767)
+
+[node name="Lever" parent="." instance=ExtResource("7_6u1dy")]
+transform = Transform3D(2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0, 1.33227e-15, 4.47035e-08, -0.5, -29.4746, 0.738419, 0)
