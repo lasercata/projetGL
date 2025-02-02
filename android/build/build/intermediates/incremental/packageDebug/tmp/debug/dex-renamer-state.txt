@@ -1,4 +1,4 @@
-#Thu Jan 30 18:54:00 CET 2025
+#Sun Feb 02 18:43:13 CET 2025
 base.2=C\:\\Users\\doria\\Documents\\GitHub\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.2=6/classes.dex
 base.1=C\:\\Users\\doria\\Documents\\GitHub\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
