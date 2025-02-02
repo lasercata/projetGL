@@ -11,9 +11,11 @@ func _on_area_3d_body_entered(body):
 	if (body.name == "Creature"):
 		emit_signal("hit_by_ennemy", body.damage)
 
-func _on_right_hand_button_pressed(name):
-	if name == "by_button":
-		get_tree().reload_current_scene()
+# function to reload to game when the B button is pressed
+# no more needed thanks to the left hand menu
+#func _on_right_hand_button_pressed(name):
+	#if name == "by_button":
+		#get_tree().reload_current_scene()
 
 func _on_left_hand_button_pressed(name):
 	if name == "menu_button":
