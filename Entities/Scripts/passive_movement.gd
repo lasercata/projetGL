@@ -32,24 +32,24 @@ static func campBehavior(positionEntity : Vector3, rotationEntity : Vector3, spa
 	return Vector3(new_pos_x, 0, new_pos_z)
 
 
-static func followingPathBehavior(list_of_position, current_position : int, reverse : bool)->Array:
-	if reverse != null: # If the entity have to retrace these steps
-		if reverse == true: # If the entity browse the list from the end
+static func followingPathBehavior(list_of_position, current_position : int, reverse : int)->Array:
+	if reverse != 0: # If the entity have to retrace these steps
+		if reverse == 1: # If the entity browse the list from the end
 			if current_position == 0: # If the entity reach the start of the list
 				current_position += 1
-				reverse = !reverse
+				reverse = 2
 			else:
 				current_position -= 1
 		else:	# If the entity browse the list from the start 
-			if current_position == list_of_position.length-1: # If the entity reach the end of the list
+			if current_position == list_of_position.size()-1: # If the entity reach the end of the list
 				current_position -= 1
-				reverse = !reverse
+				reverse = 1
 			else:
 				current_position += 1
 	else : # If the entity do a loop inside his position
-		if current_position == list_of_position.length-1: # If the entity reach the end of the list
+		if current_position == list_of_position.size()-1: # If the entity reach the end of the list
 			current_position = 0
 		else:
 			current_position += 1 
-	
+	print(list_of_position[current_position], current_position)
 	return [list_of_position[current_position], current_position, reverse]

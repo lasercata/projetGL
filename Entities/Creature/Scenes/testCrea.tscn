@@ -19,8 +19,6 @@ height = 20
 
 [node name="Creature" type="CharacterBody3D"]
 script = ExtResource("1_pp2u2")
-race = "TestCrea"
-hpMax = 20
 
 [node name="HPBar" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31664, 0)

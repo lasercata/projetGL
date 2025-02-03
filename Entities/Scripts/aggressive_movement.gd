@@ -1,24 +1,45 @@
 class_name MovementAggressive
 extends Movement
 
-static func stillBehavior(entity_position : Vector3):
+static func stillBehavior(entity_position : Vector3)->Vector3:
 	return entity_position
 	
 
-static func fleeingBehavior():
-	pass
+static func fleeingBehavior(entity_position : Vector3, player_position : Vector3, dist_stop_feeling : float)->Vector3:
+	return Movement.getProjection(player_position, entity_position, dist_stop_feeling)
 	
 	
 
-static func distanceBehavior():
-	pass
+static func distanceBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
+	var dist_player = Movement.distanceVect(entity_position, player_position)
+	if dist_player < position_tab[1]:
+		return Movement.getProjection(player_position, entity_position, position_tab[1])
+	elif dist_player == position_tab[1]:
+		return entity_position
+	else:
+		return player_position
+		
 	
 	
 
-static func cacBehavior():
-	pass
+static func cacBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
+	var dist_player = Movement.distanceVect(entity_position, player_position)
+	if dist_player < 1.5:
+		return entity_position
 	
+	else:
+		return player_position
 
 
-static func cacDistBehavior():
-	pass
+static func cacDistBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
+	var dist_player = Movement.distanceVect(entity_position, player_position)
+	if dist_player < 1.5:
+		return entity_position
+	elif dist_player < position_tab[0]:
+		return player_position
+	elif dist_player < position_tab[1]:
+		return Movement.getProjection(player_position, entity_position, position_tab[1])
+	elif dist_player == position_tab[1]:
+		return entity_position
+	else:
+		return player_position
