@@ -80,29 +80,29 @@ shape = SubResource("BoxShape3D_mvsa8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000648093, 0.000823975, 0.193818)
 shape = SubResource("BoxShape3D_et5gb")
 
-[node name="Area3D" type="Area3D" parent="." index="3"]
-collision_layer = 4
-collision_mask = 9
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" index="0"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00299164, -0.000123233, -0.297017)
 shape = SubResource("BoxShape3D_mwwsd")
 
-[node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("3_kfg7b")]
+[node name="Area3D" type="Area3D" parent="." index="4"]
+collision_layer = 4
+collision_mask = 9
+
+[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource("3_kfg7b")]
 transform = Transform3D(-0.0246777, -0.707107, -0.706676, 0.999391, -4.36848e-08, -0.0348995, 0.0246776, -0.707107, 0.706676, 0.0464436, 0, 0.290767)
 visible = true
 hand_pose = SubResource("Resource_tarrr")
 
-[node name="GrabPointHandRight2" parent="." index="5" instance=ExtResource("3_kfg7b")]
+[node name="GrabPointHandRight2" parent="." index="6" instance=ExtResource("3_kfg7b")]
 transform = Transform3D(-0.0246777, -0.707107, -0.706676, 0.999391, -4.36848e-08, -0.0348995, 0.0246776, -0.707107, 0.706676, 0.0464436, 0, 0.290767)
 visible = true
 hand = 0
 hand_pose = SubResource("Resource_tarrr")
 
-[node name="GrabPointSnap" parent="." index="6" instance=ExtResource("5_ekioi")]
+[node name="GrabPointSnap" parent="." index="7" instance=ExtResource("5_ekioi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.207837)
 
-[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="7"]
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="8"]
 script = ExtResource("5_efd3e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0" groups=["Sword"]]
