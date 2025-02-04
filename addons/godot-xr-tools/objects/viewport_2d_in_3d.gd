@@ -121,10 +121,17 @@ var _screen_material : StandardMaterial3D
 var _dirty := _DIRTY_ALL
 
 
+
+# Adding Debug Panel
+@onready var debug_label = $Control/ColorRect/MarginContainer/VBoxContainer/DebugLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_ready = true
-
+	
+	# Testing debug panel
+	test_debug_panel()
+	
 	# Listen for pointer events on the screen body
 	$StaticBody3D.connect("pointer_event", _on_pointer_event)
 
@@ -136,6 +143,30 @@ func _ready():
 	# Update the render objects
 	_update_render()
 
+
+# Function for debugging tests
+func test_debug_panel() -> void:
+	# Setting debug label to visible
+	debug_label.visible = true
+	# test : initial text
+	debug_label.text = 'visible'
+	# Test : text modification by callable function
+	#var debug_list
+	#debug_list.append("Débogage initialisé!")
+	set_debug_text("Débogage initialisé!")
+
+# Function callable to chose debug text
+func set_debug_text(debug_list) -> void:
+	var text
+	text = "debug : \n"
+	if debug_label:
+		for i in debug_label:
+			debug_label.text += 'debug : valor is ' + str(i) + ' and type is ' + str(typeof(i)) + '\n'
+	pass
+
+# Function setting debug label visible or not
+func toggle_debug_label() -> void:
+	debug_label.visible = not debug_label.visible
 
 # Provide custom property information
 func _get_property_list() -> Array[Dictionary]:
