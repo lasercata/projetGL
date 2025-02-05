@@ -26,5 +26,3 @@ func get_content():
 	
 func _process(delta: float) -> void:
 	refresh_display()
-		
-	

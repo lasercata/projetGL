@@ -2,8 +2,8 @@ extends Node
 
 @onready var pauseMenu = $LeftHand/pause_menu
 @onready var debugMenu = $LeftHand/debug_menu
-# we take the instanciated debug menu UI scene
-@onready var scene_instance = debugMenu.get_scene_instance() 
+# we take the instantiated debug menu UI scene
+@onready var debugMenu_scene = debugMenu.get_scene_instance() 
 @onready var FunctionPointer = $RightHand/FunctionPointer
 
 signal hit_by_ennemy(damage)
@@ -15,8 +15,8 @@ var incr = 0
 
 func _process(delta: float) -> void:
 	counter += 1
-	print(scene_instance.get_content())
-	scene_instance.update_content(['some test values', counter, btn_presed, incr])
+	# print(debugMenu_scene.get_content())
+	debugMenu_scene.update_content(['some test values', counter, btn_presed, incr])
  
 func _on_area_3d_body_entered(body):
 	print("Collision détectée avec :", body.name)
