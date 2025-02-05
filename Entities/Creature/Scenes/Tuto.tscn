@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccouf68xua5s7"]
+
+[ext_resource type="Script" path="res://Entities/Scripts/tuto.gd" id="1_2j4bn"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y2fxr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_raypu"]
+size = Vector3(1, 2, 1)
+
+[node name="Tuto" type="CharacterBody3D"]
+script = ExtResource("1_2j4bn")
+speed = 5
+pMode = 1
+radius = 5.0
+stop_feeling_distance = 10
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_y2fxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_raypu")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

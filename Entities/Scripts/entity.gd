@@ -32,13 +32,13 @@ var time_reach_targ_pos : float
 
 # variable for camp behavior in passive mode
 @export_subgroup("Camp passive mode")
-@export var spawn_point : Vector3
+var spawn_point : Vector3
 @export var radius : float
 
 # variable for following path behavior in passive mode
 @export_subgroup("Following path passive mode")
 @export var list_of_position : Array
-@export var current_position_in_list : int
+var current_position_in_list : int
 @export var reverse : int
 
 # variable for aggressive mode
@@ -63,7 +63,7 @@ func movement()->Vector3:
 
 func aggressive_movement() -> Vector3:
 	var res : Vector3
-	var player_position = get_parent_node_3d().get_node("Player").global_position
+	var player_position = get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position
 	if aMode == aggressiveMode.STILL:
 		res = MovementAggressive.stillBehavior(position)
 	elif aMode == aggressiveMode.FEELING:
@@ -97,7 +97,7 @@ func passive_movement()->Vector3:
 
 func setTarget():
 	if tMode == targetingMode.NEAR:
-		if Movement.distanceVect(position, get_parent_node_3d().get_node("Player").global_position) < position_status_change[2]:
+		if Movement.distanceVect(position, get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position) < stop_feeling_distance:
 			isTrackingPlayer = true
 		else :
 			isTrackingPlayer = false
@@ -109,12 +109,16 @@ func set_new_pos()->void:
 		navigation_agent_3d.target_position = movement()
 		last_time_pterg_pos_chg = Time.get_ticks_msec()
 		time_reach_targ_pos = Time.get_ticks_msec()
+		
+		print("res2 ->", navigation_agent_3d.target_position)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hp = hpMax; #hp initialization
-	isTrackingPlayer = true
+	spawn_point = position
+	current_position_in_list = 0
+	isTrackingPlayer = false
 	last_time_pterg_pos_chg = Time.get_ticks_msec()
 	time_reach_targ_pos = Time.get_ticks_msec()
 	position_status_change = [cac_distance, dist_distance]
@@ -133,13 +137,11 @@ func _process(delta: float) -> void:
 		if pMode == passiveMode.CAMP:
 			if navigation_agent_3d.is_navigation_finished() or Time.get_ticks_msec()-last_time_pterg_pos_chg > 5000 :
 				set_new_pos()
-		return
 	else:
 		set_new_pos()
-		return
-	
 	
 	velocity = global_position.direction_to(navigation_agent_3d.get_next_path_position()) * speed
-		
+	
+	
 	move_and_slide()
 	
