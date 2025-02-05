@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0t23pyw3gtfy"]
+[gd_scene load_steps=17 format=3 uid="uid://0t23pyw3gtfy"]
 
 [ext_resource type="Script" path="res://Levels/Test/test_scene.gd" id="1_wl4ie"]
 [ext_resource type="PackedScene" uid="uid://cd5le1v57c30r" path="res://Entities/Player/player.tscn" id="2_mvfsu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="7_6u1dy"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="7_wfsy7"]
 [ext_resource type="PackedScene" uid="uid://ci42hw60qc84r" path="res://Levels/Test/Scenes/climb_stone_object.tscn" id="8_8tdhb"]
+[ext_resource type="PackedScene" uid="uid://bs6svxywggs5a" path="res://Levels/Test/Scenes/tool_board.tscn" id="9_gw4y3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -145,7 +146,7 @@ transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.9999
 shape = SubResource("CylinderShape3D_an0hy")
 
 [node name="Sword" parent="." instance=ExtResource("7_wfsy7")]
-transform = Transform3D(0.0320188, 0.956724, -0.289231, 0.1337, 0.282679, 0.949851, 0.990505, -0.069083, -0.118863, 0.695061, 0.783218, -4.86651)
+transform = Transform3D(-0.256312, 0.0868963, 0.96268, 0.634824, -0.73591, 0.235448, 0.728906, 0.67148, 0.133459, 0.644161, 0.783218, -5.00294)
 collision_mask = 9
 picked_up_layer = 65536
 
@@ -159,3 +160,6 @@ collision_mask = 589828
 
 [node name="Lever" parent="." instance=ExtResource("7_6u1dy")]
 transform = Transform3D(2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0, 1.33227e-15, 4.47035e-08, -0.5, -29.4746, 1.75952, 0)
+
+[node name="ToolBoard" parent="." instance=ExtResource("9_gw4y3")]
+transform = Transform3D(0.171362, 0, -0.985208, 0, 1, 0, 0.985208, 0, 0.171362, -0.126906, 1.112, -4.87017)

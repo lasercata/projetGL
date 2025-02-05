@@ -82,8 +82,6 @@ step_turn_angle = 45.0
 [node name="RightPhysicsHand" parent="RightHand" instance=ExtResource("5_wcfh6")]
 collision_layer = 0
 
-[node name="FunctionPickup" parent="RightHand" instance=ExtResource("1_v7mbb")]
-
 [node name="HPBar" type="Sprite3D" parent="RightHand"]
 transform = Transform3D(0.126286, 0, 0.991994, 0, 1, 0, -0.991994, 0, 0.126286, 0.046626, -0.0296079, 0.226963)
 texture = SubResource("GradientTexture2D_q3mf3")
@@ -98,6 +96,9 @@ script = ExtResource("7_e8i6j")
 visible = false
 show_laser = 2
 laser_length = 1
+
+[node name="FunctionPickup" parent="RightHand" instance=ExtResource("1_v7mbb")]
+grab_distance = 0.05
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_kh7mg")]
 

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm8qinl07jmig"]
+
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="1_djpxf"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_ipj2g"]
+[ext_resource type="PackedScene" uid="uid://c7e0176a0eecu" path="res://Items/Equipment/Weapon/Sword/Assets/minecraft_diamond-sword/scene.gltf" id="3_n6op2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sy4s2"]
+resource_local_to_scene = true
+radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfltu"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="SwordSnapZone" instance=ExtResource("1_djpxf")]
+snap_mode = 1
+snap_require = "Sword"
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_sy4s2")
+
+[node name="AudioStreamPlayer3D" parent="." index="1"]
+transform = Transform3D(-0.177634, 0, 0.984097, 0, 1, 0, -0.984097, 0, -0.177634, 0, 0, 0)
+
+[node name="HighlightRing" parent="." index="2" instance=ExtResource("2_ipj2g")]
+
+[node name="Sketchfab_Scene" parent="." index="3" instance=ExtResource("3_n6op2")]
+transform = Transform3D(-1.31134e-09, 0.01, 0, -0.0212132, -3.09086e-10, -0.0212132, -0.0212132, -3.09086e-10, 0.0212132, 0.02, 0, 0)
+
+[node name="Object_2" parent="Sketchfab_Scene/Sketchfab_model/DiamondSword_obj_cleaner_materialmerger_gles" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qfltu")
+
+[editable path="Sketchfab_Scene"]

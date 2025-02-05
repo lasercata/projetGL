@@ -10,13 +10,13 @@
 [ext_resource type="Material" uid="uid://dhtgugsx1naqy" path="res://Items/Equipment/Weapon/Sword/Assets/highlight_material.tres" id="7_go8ba"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvsa8"]
-size = Vector3(0.252789, 0.0610504, 0.384691)
+size = Vector3(0.253667, 0.380889, 0.0603239)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et5gb"]
-size = Vector3(0.681885, 0.0571899, 0.212036)
+size = Vector3(0.677063, 0.209398, 0.0635071)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwwsd"]
-size = Vector3(0.266174, 0.0624695, 0.764221)
+size = Vector3(0.251968, 0.763029, 0.0582428)
 
 [sub_resource type="Resource" id="Resource_tarrr"]
 script = ExtResource("4_v8w2w")
@@ -61,52 +61,54 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5uj6s")
 
-[node name="PickableObject" instance=ExtResource("1_tfttu")]
+[node name="PickableObject" groups=["Equipment", "Sword", "Weapon"] instance=ExtResource("1_tfttu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 collision_mask = 1
 picked_up_layer = 4
 
 [node name="Sketchfab_Scene" parent="." index="0" instance=ExtResource("2_4daev")]
-transform = Transform3D(0.0212132, 0.0212132, 9.27259e-10, 0, -1.31134e-09, 0.03, 0.0212132, -0.0212132, -9.27259e-10, 0, 0, 0)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
 
 [node name="Sketchfab_model" parent="Sketchfab_Scene" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(0.999999, 0.000149259, 0.00143844, -0.000149127, 1, -8.45172e-05, -0.00143845, 8.43008e-05, 0.999999, -0.00263622, -0.000201021, 0.491737)
+transform = Transform3D(0.707104, -0.707108, 0.00174533, 0.707106, 0.707106, 0.00174533, -0.00246827, 1.97906e-09, 0.999997, 0.34368, -0.3435, 0.000879936)
 shape = SubResource("BoxShape3D_mvsa8")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000648093, 0.000823975, 0.193818)
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0.134168, -0.133616, -0.00142767)
 shape = SubResource("BoxShape3D_et5gb")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00299164, -0.000123233, -0.297017)
-shape = SubResource("BoxShape3D_mwwsd")
-
-[node name="Area3D" type="Area3D" parent="." index="4"]
+[node name="Area3D" type="Area3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0976228, 0.0864074, 0)
 collision_layer = 4
 collision_mask = 9
 
-[node name="GrabPointHandRight" parent="." index="5" instance=ExtResource("3_kfg7b")]
-transform = Transform3D(-0.0246777, -0.707107, -0.706676, 0.999391, -4.36848e-08, -0.0348995, 0.0246776, -0.707107, 0.706676, 0.0464436, 0, 0.290767)
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.113441, 0.124274, 0.000617489)
+shape = SubResource("BoxShape3D_mwwsd")
+
+[node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("3_kfg7b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.160489, -0.230264, -0.00156824)
 visible = true
 hand_pose = SubResource("Resource_tarrr")
 
-[node name="GrabPointHandRight2" parent="." index="6" instance=ExtResource("3_kfg7b")]
-transform = Transform3D(-0.0246777, -0.707107, -0.706676, 0.999391, -4.36848e-08, -0.0348995, 0.0246776, -0.707107, 0.706676, 0.0464436, 0, 0.290767)
+[node name="GrabPointHandRight2" parent="." index="5" instance=ExtResource("3_kfg7b")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.16, -0.23, -0.002)
 visible = true
 hand = 0
 hand_pose = SubResource("Resource_tarrr")
 
-[node name="GrabPointSnap" parent="." index="7" instance=ExtResource("5_ekioi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.207837)
+[node name="GrabPointSnap" parent="." index="6" instance=ExtResource("5_ekioi")]
+transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, -5.29396e-23, 6.94141e-09, 0.0242123)
+visible = true
 
-[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="8"]
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="7"]
 script = ExtResource("5_efd3e")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0" groups=["Sword"]]
-transform = Transform3D(0.0212132, 0.0212132, 9.27259e-10, 0, -1.31134e-09, 0.03, 0.0212132, -0.0212132, -9.27259e-10, 0, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
 mesh = SubResource("ArrayMesh_nxe2w")
 surface_material_override/0 = ExtResource("7_go8ba")
 

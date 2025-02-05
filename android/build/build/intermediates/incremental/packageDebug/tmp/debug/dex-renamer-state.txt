@@ -1,9 +1,9 @@
-#Sun Feb 02 22:31:50 CET 2025
-base.2=C\:\\Pro\\GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+#Wed Feb 05 19:05:02 CET 2025
+base.2=C\:\\Users\\laszl\\OneDrive\\Documents\\Cours\\Projet GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 path.2=6/classes.dex
-base.1=C\:\\Pro\\GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=C\:\\Users\\laszl\\OneDrive\\Documents\\Cours\\Projet GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 path.1=0/classes.dex
-base.0=C\:\\Pro\\GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=C\:\\Users\\laszl\\OneDrive\\Documents\\Cours\\Projet GL\\projetGL\\android\\build\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
