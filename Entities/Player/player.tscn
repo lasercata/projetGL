@@ -67,6 +67,7 @@ collision_layer = 5242880
 scene = ExtResource("6_28e5p")
 viewport_size = Vector2(1150, 650)
 unshaded = true
+scene_properties_keys = PackedStringArray()
 
 [node name="debug_menu" parent="LeftHand" instance=ExtResource("5_if4xl")]
 process_mode = 2
@@ -76,7 +77,8 @@ screen_size = Vector2(1280, 780)
 collision_layer = 5242880
 viewport_size = Vector2(1150, 650)
 unshaded = true
-scene_properties_keys = PackedStringArray("in_game_ui_debug.gd")
+scene_properties_keys = PackedStringArray("in_game_ui_debug.gd", "process_while_paused")
+process_while_paused = true
 
 [node name="MovementClimb" parent="LeftHand" instance=ExtResource("5_ap4jk")]
 
