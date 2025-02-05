@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccouf68xua5s7"]
 
-[ext_resource type="Script" path="res://Entities/Scripts/tuto.gd" id="1_2j4bn"]
+[ext_resource type="Script" path="res://Entities/Creature/Scripts/tuto.gd" id="1_2j4bn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y2fxr"]
 
@@ -12,6 +12,8 @@ script = ExtResource("1_2j4bn")
 speed = 5
 pMode = 1
 radius = 5.0
+cac_distance = 5
+dist_distance = 8
 stop_feeling_distance = 10
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
