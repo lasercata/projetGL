@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c4mavaaltgqee"]
+
+[ext_resource type="FontFile" uid="uid://dgvk5ucb0rlly" path="res://UI/Inventory/Assets/Themes/Font/BabaMediumPixels.ttf" id="1_21cds"]
+
+[resource]
+default_font = ExtResource("1_21cds")

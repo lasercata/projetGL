@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dg53t0qvfm33u"]
+
+[ext_resource type="Texture2D" uid="uid://14d8y25ie2kg" path="res://UI/Inventory/Assets/Themes/Sprites/Inventory Cell.png" id="1_h26ft"]
+[ext_resource type="FontFile" uid="uid://dgvk5ucb0rlly" path="res://UI/Inventory/Assets/Themes/Font/BabaMediumPixels.ttf" id="2_s345k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjofy"]
+texture = ExtResource("1_h26ft")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[resource]
+default_font = ExtResource("2_s345k")
+Panel/styles/panel = SubResource("StyleBoxTexture_pjofy")

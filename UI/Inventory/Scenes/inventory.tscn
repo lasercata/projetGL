@@ -1,0 +1,221 @@
+[gd_scene load_steps=4 format=3 uid="uid://0834q7kxqanc"]
+
+[ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory_data_manager.gd" id="2_6huh0"]
+[ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory.gd" id="2_mt14b"]
+[ext_resource type="Theme" uid="uid://dg53t0qvfm33u" path="res://UI/Inventory/Assets/Themes/main_theme.tres" id="2_v7vix"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_v7vix")
+script = ExtResource("2_mt14b")
+metadata/_edit_lock_ = true
+
+[node name="InventoryDataManager" type="Node" parent="Inventory"]
+script = ExtResource("2_6huh0")
+
+[node name="Panel" type="Panel" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.5
+offset_top = -245.0
+offset_right = 313.5
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Inventory/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="EquipedContainer" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="title" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Equiped"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="armor" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer"]
+layout_mode = 2
+text = "Armor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equiped" type="GridContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="backleft" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+layout_mode = 2
+text = "
+
+
+back left"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Helmet" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="backright" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+layout_mode = 2
+text = "
+
+
+back right"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BackLeft" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Chestplate" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="BackRight" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="beltleft" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+layout_mode = 2
+text = "
+
+
+belt left"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Gauntelets" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="beltright" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+layout_mode = 2
+text = "
+
+
+belt right"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BeltLeft" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="Legging" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="BeltRight" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="_" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+layout_mode = 2
+
+[node name="Boots" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+
+[node name="__" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer/EquipedContainer/Equiped"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="spells" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spells
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpellsContainer" type="GridContainer" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+columns = 3
+
+[node name="Spell 1" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/SpellsContainer"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="Spell 2" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/SpellsContainer"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="Spell 3" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/SpellsContainer"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="Spell 4" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/SpellsContainer"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="Spell 5" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/SpellsContainer"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="Spell 6" type="ColorRect" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2/SpellsContainer"]
+custom_minimum_size = Vector2(100, 75)
+layout_mode = 2
+
+[node name="objects" type="Label" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "
+Weapons & Objects
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryItemList" type="ItemList" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
