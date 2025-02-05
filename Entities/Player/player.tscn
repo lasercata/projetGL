@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd5le1v57c30r"]
+[gd_scene load_steps=20 format=3 uid="uid://cd5le1v57c30r"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/collisionScript.gd" id="1_h3dvg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="1_v7mbb"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_kh7mg"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/hpbar.gd" id="6_ypaab"]
 [ext_resource type="Script" path="res://Entities/Player/Scripts/manabar.gd" id="7_e8i6j"]
+[ext_resource type="PackedScene" uid="uid://0834q7kxqanc" path="res://UI/Inventory/Scenes/inventory.tscn" id="7_ugaj1"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="9_bkp5h"]
 
 [sub_resource type="Gradient" id="Gradient_ya72f"]
@@ -77,6 +78,17 @@ screen_size = Vector2(1280, 780)
 collision_layer = 5242880
 viewport_size = Vector2(1150, 650)
 unshaded = true
+
+[node name="inventory_menu" parent="LeftHand" instance=ExtResource("5_if4xl")]
+process_mode = 3
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+visible = false
+screen_size = Vector2(1280, 780)
+collision_layer = 5242880
+scene = ExtResource("7_ugaj1")
+viewport_size = Vector2(1150, 650)
+unshaded = true
+scene_properties_keys = PackedStringArray()
 
 [node name="MovementClimb" parent="LeftHand" instance=ExtResource("5_ap4jk")]
 

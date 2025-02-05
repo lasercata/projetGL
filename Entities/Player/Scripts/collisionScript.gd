@@ -2,6 +2,7 @@ extends Node
 
 @onready var pauseMenu = $LeftHand/pause_menu
 @onready var debugMenu = $LeftHand/debug_menu
+@onready var inventoryMenu = $LeftHand/inventory_menu
 # we take the instanciated debug menu UI scene
 @onready var scene_instance = debugMenu.get_scene_instance() 
 @onready var FunctionPointer = $RightHand/FunctionPointer
@@ -41,4 +42,9 @@ func _on_left_hand_button_pressed(name):
 	if name == "menu_button":
 		get_tree().paused = !get_tree().paused
 		pauseMenu.visible = !pauseMenu.visible
+		FunctionPointer.visible = !FunctionPointer.visible
+	
+	#  /!\  Button still not added, have to set one
+	if name == "inventory_button":
+		inventoryMenu.visible = !inventoryMenu.visible
 		FunctionPointer.visible = !FunctionPointer.visible
