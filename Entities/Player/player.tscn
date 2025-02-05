@@ -58,7 +58,7 @@ max_speed = 10.0
 
 [node name="LeftPhysicsHand" parent="LeftHand" instance=ExtResource("3_dnfyn")]
 
-[node name="Viewport2Din3D" parent="LeftHand" instance=ExtResource("5_if4xl")]
+[node name="pause_menu" parent="LeftHand" instance=ExtResource("5_if4xl")]
 process_mode = 2
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.266191, -0.616513)
 visible = false
@@ -67,6 +67,16 @@ collision_layer = 5242880
 scene = ExtResource("6_28e5p")
 viewport_size = Vector2(1150, 650)
 unshaded = true
+
+[node name="debug_menu" parent="LeftHand" instance=ExtResource("5_if4xl")]
+process_mode = 2
+transform = Transform3D(0.001, 0, 0, 0, 0.000933886, -0.000357569, 0, 0.000357569, 0.000933886, 0, 1.10581, -0.467731)
+visible = false
+screen_size = Vector2(1280, 780)
+collision_layer = 5242880
+viewport_size = Vector2(1150, 650)
+unshaded = true
+scene_properties_keys = PackedStringArray("in_game_ui_debug.gd")
 
 [node name="MovementClimb" parent="LeftHand" instance=ExtResource("5_ap4jk")]
 
