@@ -8,6 +8,7 @@ extends Node
 
 signal hit_by_ennemy(damage)
 
+# test values, rememmber to remove !!!
 var counter = 0
 var btn_presed
 var incr = 0
@@ -15,7 +16,7 @@ var incr = 0
 func _process(delta: float) -> void:
 	counter += 1
 	print(scene_instance.get_content())
-	scene_instance.update_content([counter, btn_presed, incr])
+	scene_instance.update_content(['some test values', counter, btn_presed, incr])
  
 func _on_area_3d_body_entered(body):
 	print("Collision détectée avec :", body.name)
