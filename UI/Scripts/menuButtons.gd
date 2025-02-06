@@ -1,15 +1,13 @@
 extends Button
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.reset_menu.connect(reset_menu)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func _on_reset_button_pressed():
 	get_tree().paused = !get_tree().paused
@@ -18,3 +16,12 @@ func _on_reset_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_parameters_button_pressed():
+	$"..".visible = false;
+	$"../../VBoxContainer2".visible = true;
+
+func reset_menu():
+	$"..".visible = true;
+	$"../../VBoxContainer2".visible = false;

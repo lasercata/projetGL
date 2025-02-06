@@ -97,7 +97,7 @@ func passive_movement()->Vector3:
 
 func setTarget():
 	if tMode == targetingMode.NEAR:
-		if Movement.distanceVect(position, get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position) < stop_feeling_distance:
+		if Movement.distanceVect(position, get_parent_node_3d().get_node("Player").global_position) < stop_feeling_distance:
 			isTrackingPlayer = true
 		else :
 			isTrackingPlayer = false
