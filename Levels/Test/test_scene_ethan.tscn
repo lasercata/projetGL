@@ -43,6 +43,12 @@ script = ExtResource("1_n42gy")
 [node name="Entity" type="Node3D" parent="."]
 
 [node name="Tuto" parent="Entity" instance=ExtResource("2_yl3uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+speed = 4
+radius = 5.0
+cac_distance = 5.0
+dist_distance = 7.5
+stop_feeling_distance = 10.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_30i32")
