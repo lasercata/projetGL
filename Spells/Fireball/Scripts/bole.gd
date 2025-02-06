@@ -8,11 +8,13 @@ var t0 : int
 var velocity : Vector3
 var list_of_position : Array
 var collision_shape: CollisionShape3D
+var number_of_frame_since_release : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mode = 0
 	t0 = 0
+	number_of_frame_since_release = 0
 	list_of_position = []
 	collision_shape = get_node("CollisionShape3D")
 	collision_shape.disabled = true
@@ -36,7 +38,10 @@ func _process(delta: float) -> void:
 		if list_of_position.size() > 5:
 			list_of_position.pop_at(0)
 	elif mode == 1:
-		collision_shape.disabled = false 
+		if(number_of_frame_since_release < 10) :
+			number_of_frame_since_release = number_of_frame_since_release + 1
+		else :
+			collision_shape.disabled = false 
 		if t0 == 0:
 			t0 = Time.get_ticks_msec()  # Définir t0 une seule fois
 		velocity = calcul_velocity(left_hand_position, delta)
