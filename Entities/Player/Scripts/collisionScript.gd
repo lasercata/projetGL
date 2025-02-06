@@ -30,12 +30,21 @@ func _on_area_3d_body_entered(body):
 func _on_right_hand_button_pressed(name):
 	btn_presed = name
 	if name == 'by_button':
-		incr += 1
+		pass
 	if name == 'ax_button':
 		# create the menu for spell selection
 		var spell_menu = load("res://UI/Scenes/SpellMenu.tscn")
-		add_child(spell_menu.instantiate())
+		var player_scene = get_tree().current_scene.get_node("Player")
+		incr = player_scene
+		player_scene.add_child(spell_menu.instantiate())
 		
+func _on_right_hand_button_released(name):
+	if name == 'ax_button':
+		# create the menu for spell selection
+		var spell_menu_scene = get_tree().current_scene.get_node("Player").get_node("SpellMenu")
+		spell_menu_scene.destroy()
+
+
 
 func _on_left_hand_button_pressed(name):
 	btn_presed = name

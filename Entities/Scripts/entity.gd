@@ -127,8 +127,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_on_floor() == false:
-		velocity += get_gravity() * delta
+
 	
 	setTarget()
 	
@@ -142,6 +141,8 @@ func _process(delta: float) -> void:
 	
 	velocity = global_position.direction_to(navigation_agent_3d.get_next_path_position()) * speed
 	
-	
+	if is_on_floor() == false:
+		velocity += get_gravity() * delta
+		
 	move_and_slide()
 	

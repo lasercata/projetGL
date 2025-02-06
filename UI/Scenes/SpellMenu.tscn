@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0hxjbgl7e3s5"]
+[gd_scene load_steps=3 format=3 uid="uid://c0hxjbgl7e3s5"]
+
+[ext_resource type="Script" path="res://UI/Scripts/spell_menu.gd" id="1_5so2x"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_b8woo"]
-size = Vector3(1, 1, 0.1)
+size = Vector3(0.25, 0.25, 0.01)
 
 [node name="SpellMenu" type="MeshInstance3D"]
 mesh = SubResource("PrismMesh_b8woo")
+script = ExtResource("1_5so2x")

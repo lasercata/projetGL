@@ -123,5 +123,6 @@ shape = SubResource("CapsuleShape3D_rdg41")
 [connection signal="hit_by_ennemy" from="." to="RightHand/HPBar" method="_on_player_hit_by_ennemy"]
 [connection signal="button_pressed" from="LeftHand" to="." method="_on_left_hand_button_pressed"]
 [connection signal="button_pressed" from="RightHand" to="." method="_on_right_hand_button_pressed"]
+[connection signal="button_released" from="RightHand" to="." method="_on_right_hand_button_released"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
