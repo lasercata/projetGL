@@ -44,9 +44,9 @@ var current_position_in_list : int
 # variable for aggressive mode
 @export_subgroup("Aggressive mode")
 var position_status_change : Array
-@export var cac_distance : int
-@export var dist_distance : int
-@export var stop_feeling_distance : int
+@export var cac_distance : float
+@export var dist_distance : float
+@export var stop_feeling_distance : float
 
 
 func movement()->Vector3:
@@ -97,20 +97,22 @@ func passive_movement()->Vector3:
 
 func setTarget():
 	if tMode == targetingMode.NEAR:
+		print('=== DEBUG ===')
+		print(get_parent_node_3d().get_children())
 		if Movement.distanceVect(position, get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position) < stop_feeling_distance:
 			isTrackingPlayer = true
 		else :
+			navigation_agent_3d.target_position = spawn_point
 			isTrackingPlayer = false
 			
 	
 	
 func set_new_pos()->void:
-	if Time.get_ticks_msec()- time_reach_targ_pos > 3000:
-		navigation_agent_3d.target_position = movement()
-		last_time_pterg_pos_chg = Time.get_ticks_msec()
-		time_reach_targ_pos = Time.get_ticks_msec()
-		
-		print("res2 ->", navigation_agent_3d.target_position)
+	navigation_agent_3d.target_position = movement()
+	last_time_pterg_pos_chg = Time.get_ticks_msec()
+	time_reach_targ_pos = Time.get_ticks_msec()
+	
+	print("res2 ->", navigation_agent_3d.target_position)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -127,21 +129,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_on_floor() == false:
-		velocity += get_gravity() * delta
-	
 	setTarget()
 	
 	
 	if isTrackingPlayer == false:
 		if pMode == passiveMode.CAMP:
 			if navigation_agent_3d.is_navigation_finished() or Time.get_ticks_msec()-last_time_pterg_pos_chg > 5000 :
-				set_new_pos()
+					if Time.get_ticks_msec() - time_reach_targ_pos > 3000:
+						set_new_pos()
 	else:
 		set_new_pos()
 	
 	velocity = global_position.direction_to(navigation_agent_3d.get_next_path_position()) * speed
 	
-	
+	if is_on_floor() == false:
+		velocity += get_gravity() * delta
+
 	move_and_slide()
 	
