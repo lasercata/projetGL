@@ -6,6 +6,7 @@ extends Node
 @onready var debugMenu_scene = debugMenu.get_scene_instance() 
 @onready var FunctionPointer = $RightHand/FunctionPointer
 
+
 signal hit_by_ennemy(damage)
 
 # test values, rememmber to remove !!!
@@ -39,6 +40,7 @@ func _on_left_hand_button_pressed(name):
 	if name == "ax_button":
 		debugMenu.visible = !debugMenu.visible
 	if name == "menu_button":
+		Global.exit_menu()
 		get_tree().paused = !get_tree().paused
 		pauseMenu.visible = !pauseMenu.visible
 		FunctionPointer.visible = !FunctionPointer.visible
