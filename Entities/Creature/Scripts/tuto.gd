@@ -14,3 +14,5 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	var node_weapon = area.get_parent()
 	# hp -= node_weapon.damages
 	hp -= 3
+	if (hp <= 0):
+		queue_free()

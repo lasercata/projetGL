@@ -40,6 +40,8 @@ shape = SubResource("BoxShape3D_raypu")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 720900
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_yfst1")
