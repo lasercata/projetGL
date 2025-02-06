@@ -21,7 +21,7 @@ enum LeverPosition{
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass 
+	snapLever()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,9 +41,8 @@ func _process(delta: float) -> void:
 		lever_position = LeverPosition.NEUTRAL
 		emit_signal("neutral_position", self)
 
-
-# Called when the player releases the lever
-func _on_grab_point_dropped(pickable: Variant) -> void:
+# Snaps the lever to the correct position
+func snapLever() -> void:
 	match lever_position:
 		LeverPosition.UP:
 			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, -45))
@@ -54,3 +53,7 @@ func _on_grab_point_dropped(pickable: Variant) -> void:
 		LeverPosition.NEUTRAL:
 			get_node("LeverStick").set("rotation_degrees", Vector3(0, 0, 0))
 			get_node("GrabPoint").set("position", Vector3(0, 1, 0))
+
+# Called when the player releases the lever
+func _on_grab_point_dropped(pickable: Variant) -> void:
+	snapLever()
