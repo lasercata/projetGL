@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.godot.game-mergeDebugResources-2:/values-es-rES/values-es-rES.xml",
+            "outputFile": "com.godot.game-mergeDebugResources-17:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
-                    "source": "C:\\Pro\\GL\\projetGL\\android\\build\\res\\values-es-rES\\godot_project_name_string.xml",
+                    "source": "/Users/etiennebouroullec/Documents/2A/Projet GL/projetGL/android/build/res/values-es-rES/godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",
