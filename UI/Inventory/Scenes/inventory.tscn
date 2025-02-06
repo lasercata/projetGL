@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://0834q7kxqanc"]
+[gd_scene load_steps=5 format=3 uid="uid://0834q7kxqanc"]
 
 [ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory_data_manager.gd" id="2_6huh0"]
 [ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory.gd" id="2_mt14b"]
 [ext_resource type="Theme" uid="uid://dg53t0qvfm33u" path="res://UI/Inventory/Assets/Themes/main_theme.tres" id="2_v7vix"]
+[ext_resource type="Script" path="res://UI/Inventory/Scripts/inventory_item_list.gd" id="4_y58oj"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -219,3 +220,4 @@ vertical_alignment = 1
 [node name="InventoryItemList" type="ItemList" parent="Inventory/Panel/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+script = ExtResource("4_y58oj")

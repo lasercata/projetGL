@@ -16,6 +16,7 @@ func update_item_display(item_amount: ItemAmount) -> void:
 	var item_id = _find_item_in_list(item_amount)
 	var item_text = "%s : %d" % [item_amount.item.name, item_amount.amount]
 	
+	# if item not on the list, display a new one
 	if item_id == -1:
 		add_item(item_text, item_amount.item.inventory_texture)
 		item_id = get_item_count() - 1
@@ -27,6 +28,7 @@ func update_item_display(item_amount: ItemAmount) -> void:
 		else : 
 			set_item_text(item_id,item_text)
 
+# Search the item in the list
 func _find_item_in_list(item_amount: ItemAmount) -> int:
 	for i in range (get_item_count()):
 		if item_amount == get_item_metadata(i):
@@ -42,3 +44,7 @@ func _on_inventory_data_manager_item_added(item_amount: ItemAmount) -> void:
 
 func _on_inventory_data_manager_item_removed(item_amount: ItemAmount) -> void:
 	update_item_display(item_amount)
+
+
+
+# If we have no collectible object, every ItemAmount can be changed for Item
