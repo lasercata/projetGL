@@ -4,8 +4,6 @@ extends Creature
 
 const SPEED = 3.0
 const JUMP_VELOCITY = 4
-var hp : int
-
 
 
 

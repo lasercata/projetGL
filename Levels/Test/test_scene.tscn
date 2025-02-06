@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://0t23pyw3gtfy"]
+[gd_scene load_steps=15 format=3 uid="uid://0t23pyw3gtfy"]
 
 [ext_resource type="Script" path="res://Levels/Test/test_scene.gd" id="1_wl4ie"]
 [ext_resource type="PackedScene" uid="uid://cd5le1v57c30r" path="res://Entities/Player/player.tscn" id="2_mvfsu"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_ik5sc"]
-[ext_resource type="PackedScene" uid="uid://tr3a67i0kn3r" path="res://Entities/Creature/Scenes/testCrea.tscn" id="4_euvt4"]
 [ext_resource type="PackedScene" uid="uid://cv61u1e5ae2ib" path="res://Levels/Test/Scenes/grid_map_test.tscn" id="5_7l8hj"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="7_6u1dy"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="7_wfsy7"]
@@ -31,9 +30,6 @@ tonemap_mode = 2
 
 [node name="Test" type="Node3D"]
 script = ExtResource("1_wl4ie")
-
-[node name="Creature" parent="." instance=ExtResource("4_euvt4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2571, -0.179276, -9.43152)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x4xqt")

@@ -32,7 +32,10 @@ func _on_right_hand_button_pressed(name):
 	if name == 'by_button':
 		incr += 1
 	if name == 'ax_button':
-		incr -= 1
+		# create the menu for spell selection
+		var spell_menu = load("res://UI/Scenes/SpellMenu.tscn")
+		add_child(spell_menu.instantiate())
+		
 
 func _on_left_hand_button_pressed(name):
 	btn_presed = name
