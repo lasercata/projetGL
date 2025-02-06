@@ -3,7 +3,7 @@ class_name Item
 
 # @export var name : String
 @export var description : String
-var inventory_texture
+var inventory_texture 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

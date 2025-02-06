@@ -81,7 +81,7 @@ unshaded = true
 
 [node name="inventory_menu" parent="LeftHand" instance=ExtResource("5_if4xl")]
 process_mode = 3
-transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0.017283, 0, -0.416509)
 visible = false
 screen_size = Vector2(1280, 780)
 collision_layer = 5242880

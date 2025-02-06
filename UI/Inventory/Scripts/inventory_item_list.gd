@@ -5,12 +5,21 @@ class_name InventoryItemList
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	testItemList()
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+# Test function
+func testItemList() -> void:
+	var testItem : Item
+	testItem.name = "un item"
+	var testItemAmount : ItemAmount
+	testItemAmount.item = testItem
+	testItemAmount.amount += 1
+	update_item_display(testItemAmount)
 
 func update_item_display(item_amount: ItemAmount) -> void:
 	var item_id = _find_item_in_list(item_amount)
@@ -18,7 +27,7 @@ func update_item_display(item_amount: ItemAmount) -> void:
 	
 	# if item not on the list, display a new one
 	if item_id == -1:
-		add_item(item_text, item_amount.item.inventory_texture)
+		add_item(item_text) #add_item(item_text, item_amount.item.inventory_texture)
 		item_id = get_item_count() - 1
 		set_item_metadata(item_id, item_amount)
 	

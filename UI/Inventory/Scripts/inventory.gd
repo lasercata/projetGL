@@ -1,50 +1,50 @@
 
-extends Control
+#extends Control
 
-class_name Inventory
+#class_name Inventory
 
-@onready var isHidden := true 
-@onready var tween := create_tween()
-@onready var panel = $Panel
-@onready var hidden_position = position # (rect_position)
-@onready var visible_position = hidden_position - panel.size * Vector2.RIGHT # (rect_size)
+#@onready var isHidden := true 
+#@onready var tween := create_tween()
+#@onready var panel = $Panel
+#@onready var hidden_position = position # (rect_position)
+#@onready var visible_position = hidden_position - panel.size * Vector2.RIGHT # (rect_size)
 
-signal hidden_changed(value)
+#signal hidden_changed(value)
 
 ### ACCESSORS ###
 
-func set_hidden(value: bool) -> void:
-	if value != isHidden:
-		isHidden = value
-		emit_signal("hidden_changed", hidden)
-func is_hidden() -> bool: return isHidden
+#func set_hidden(value: bool) -> void:
+#	if value != isHidden:
+#		isHidden = value
+#		emit_signal("hidden_changed", hidden)
+#func is_hidden() -> bool: return isHidden
 
 ### BUILT-IN ###
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+#func _ready() -> void:
 	#var __ = connect("hidden_changed", self, "_on_hidden_changed")
-	pass # Replace with function body.
+#	pass # Replace with function body.
 
 ### LOGIC ###
 
 # function handling apparition and disparition of the inventory when the key is pressed
-func _animation(appear: bool) -> void:
-	var from = position #hidden_position
-	var to = visible_position if appear else hidden_position
-	tween.interpolate_property(self, "rect_position:x", from, to, 1, tween.TRANS_CUBIC) # can change the TRANS
-	tween.start() 
+#func _animation(appear: bool) -> void:
+#	var from = position #hidden_position
+#	var to = visible_position if appear else hidden_position
+#	tween.interpolate_property(self, "rect_position:x", from, to, 1, tween.TRANS_CUBIC) # can change the TRANS
+#	tween.start() 
 
 ### INPUTS ###
 
-func _input(event: InputEvent) -> void:
-	if (Input.is_action_pressed("inventory")):
-		# button for hidding or showing the inventory
-		set_hidden(!is_hidden())
+#func _input(event: InputEvent) -> void:
+#	if (Input.is_action_pressed("inventory")):
+#		# button for hidding or showing the inventory
+#		set_hidden(!is_hidden())
 
 ### SIGNALS ###
 
 # launch inventory animation when key is pressed
 # value is here to know if inventory have to be shown or hidden
-func _on_hidden_changed(_value: bool) -> void:
-	_animation(!is_hidden())
+#func _on_hidden_changed(_value: bool) -> void:
+#	_animation(!is_hidden())

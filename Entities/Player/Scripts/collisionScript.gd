@@ -44,7 +44,6 @@ func _on_left_hand_button_pressed(name):
 		pauseMenu.visible = !pauseMenu.visible
 		FunctionPointer.visible = !FunctionPointer.visible
 	
-	#  /!\  Button still not added, have to set one
 	if name == "by_button":
 		inventoryMenu.visible = !inventoryMenu.visible
 		FunctionPointer.visible = !FunctionPointer.visible
