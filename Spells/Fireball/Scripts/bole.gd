@@ -15,7 +15,8 @@ func _ready() -> void:
 	t0 = 0
 	list_of_position = []
 	collision_shape = get_node("CollisionShape3D")
-	collision_shape.disabled = true  
+	collision_shape.disabled = true
+	visible = true  
 	#var left_hand =get_parent_node_3d().get_parent_node_3d().get_node("Player").get_node("LeftHand")
 	#var left_hand_position = left_hand.global_position
 	#position = left_hand_position

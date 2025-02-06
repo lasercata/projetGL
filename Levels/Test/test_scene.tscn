@@ -159,3 +159,5 @@ collision_mask = 589828
 
 [node name="Lever" parent="." instance=ExtResource("7_6u1dy")]
 transform = Transform3D(2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0, 1.33227e-15, 4.47035e-08, -0.5, -29.4746, 1.75952, 0)
+
+[node name="Spell" type="Node3D" parent="."]
