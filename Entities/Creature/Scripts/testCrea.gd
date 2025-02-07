@@ -14,7 +14,7 @@ func _ready() -> void:
 	speed = SPEED
 	
 	pMode = passiveMode.CAMP
-	aMode = aggressiveMode.FEELING
+	aMode = aggressiveMode.FLEEING
 	
 	spawn_point = global_position
 	radius = 10
@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 	
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	hp -= 3 # prends 3 de dégats à chaque fois que qqchose entre dans sa zone
-	if (hp <= 0):
-		queue_free()
+	if !isInvincible:
+		hp -= 3 # prends 3 de dégats à chaque fois que qqchose entre dans sa zone
+		if (hp <= 0):
+			queue_free()

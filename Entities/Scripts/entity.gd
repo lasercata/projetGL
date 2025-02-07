@@ -2,12 +2,28 @@ class_name Entity
 
 extends CharacterBody3D
 
-enum passiveMode {STILL, CAMP, FOLLOWING_PATH}
-enum aggressiveMode {STILL, FEELING, DISTANCE, CAC, DISTCAC}
-enum targetingMode {NEAR, INTERACTION, ATTACK}
+enum passiveMode {
+	STILL, ## le truc bouge pas
+	CAMP,  ## le truc bouge
+	FOLLOWING_PATH ## le truc bouge et suit un truc
+}
 
+enum aggressiveMode {
+	STILL, 
+	FLEEING, 
+	DISTANCE, 
+	MELEE, 
+	DISTMELEE
+}
+	
+enum targetingMode {
+	NEAR, 
+	INTERACTION, 
+	ATTACK
+}
 
-@export var race : String # Enum ?
+## C'est la race du Chieng
+@export var race : String 
 @export var description : String
 @export var hpMax : int
 var hp : int
@@ -46,7 +62,7 @@ var current_position_in_list : int
 var position_status_change : Array
 @export var cac_distance : float
 @export var dist_distance : float
-@export var stop_feeling_distance : float
+@export var stop_fleeing_distance : float
 
 
 func movement()->Vector3:
@@ -66,13 +82,13 @@ func aggressive_movement() -> Vector3:
 	var player_position = get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position
 	if aMode == aggressiveMode.STILL:
 		res = MovementAggressive.stillBehavior(position)
-	elif aMode == aggressiveMode.FEELING:
-		res = MovementAggressive.fleeingBehavior(position, player_position, stop_feeling_distance)
+	elif aMode == aggressiveMode.FLEEING:
+		res = MovementAggressive.fleeingBehavior(position, player_position, stop_fleeing_distance)
 	elif aMode == aggressiveMode.DISTANCE:
 		res = MovementAggressive.distanceBehavior(position, player_position, position_status_change)
-	elif aMode == aggressiveMode.CAC:
+	elif aMode == aggressiveMode.MELEE:
 		res = MovementAggressive.cacBehavior(position, player_position, position_status_change)
-	elif aMode == aggressiveMode.DISTCAC:
+	elif aMode == aggressiveMode.DISTMELEE:
 		res = MovementAggressive.cacDistBehavior(position, player_position, position_status_change)
 	else:
 		res = position
@@ -99,7 +115,7 @@ func setTarget():
 	if tMode == targetingMode.NEAR:
 		print('=== DEBUG ===')
 		print(get_parent_node_3d().get_children())
-		if Movement.distanceVect(position, get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position) < stop_feeling_distance:
+		if Movement.distanceVect(position, get_parent_node_3d().get_parent_node_3d().get_node("Player").global_position) < stop_fleeing_distance:
 			isTrackingPlayer = true
 		else :
 			navigation_agent_3d.target_position = spawn_point

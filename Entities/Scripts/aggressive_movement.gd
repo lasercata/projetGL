@@ -5,8 +5,8 @@ static func stillBehavior(entity_position : Vector3)->Vector3:
 	return entity_position
 	
 
-static func fleeingBehavior(entity_position : Vector3, player_position : Vector3, dist_stop_feeling : float)->Vector3:
-	return Movement.getProjection(player_position, entity_position, dist_stop_feeling)
+static func fleeingBehavior(entity_position : Vector3, player_position : Vector3, dist_stop_fleeing : float)->Vector3:
+	return Movement.getProjection(player_position, entity_position, dist_stop_fleeing)
 	
 	
 
