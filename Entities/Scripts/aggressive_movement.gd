@@ -22,7 +22,7 @@ static func distanceBehavior(entity_position : Vector3, player_position : Vector
 	
 	
 
-static func cacBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
+static func meleeBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
 	var dist_player = Movement.distanceVect(entity_position, player_position)
 	if dist_player < 1.5:
 		return entity_position
@@ -31,7 +31,7 @@ static func cacBehavior(entity_position : Vector3, player_position : Vector3, po
 		return player_position
 
 
-static func cacDistBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
+static func meleeDistBehavior(entity_position : Vector3, player_position : Vector3, position_tab : Array)->Vector3:
 	var dist_player = Movement.distanceVect(entity_position, player_position)
 	if dist_player < 1.5:
 		return entity_position

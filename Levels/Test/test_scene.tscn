@@ -80,10 +80,11 @@ collision_mask = 589828
 
 [node name="Tuto" parent="Enity" instance=ExtResource("9_oxl8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.743, 4.23915, -14.8208)
+race = 3
 speed = 5
 radius = 10.0
-cac_distance = 5.0
 dist_distance = 7.5
 
 [node name="Creature" parent="Enity" instance=ExtResource("4_euvt4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3241, 1.15658, 3.30514)
+race = 0

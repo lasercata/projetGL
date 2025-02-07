@@ -2,36 +2,43 @@ class_name Entity
 
 extends CharacterBody3D
 
+enum races {
+	Human,
+	Dwarf,
+	Dog,
+	Goblin,
+	BOSS
+}
+
 enum passiveMode {
-	STILL, ## le truc bouge pas
-	CAMP,  ## le truc bouge
-	FOLLOWING_PATH ## le truc bouge et suit un truc
+	STILL, ## It stays still
+	CAMP,  ## It randomly moves in a certain zone
+	FOLLOWING_PATH ## It follows a precalculed path
 }
 
 enum aggressiveMode {
-	STILL, 
-	FLEEING, 
-	DISTANCE, 
-	MELEE, 
-	DISTMELEE
+	STILL, ## It stays still
+	FLEEING, ## It flies from the player
+	DISTANCE, ## It stays at a precalculated distance from the player to use range weapons
+	MELEE, ## It comes to the player to use melee weapons
+	DISTMELEE ## It stays away from the player until they reach a limit, then it comes to them
 }
 	
 enum targetingMode {
-	NEAR, 
-	INTERACTION, 
-	ATTACK
+	NEAR, ## It targets the player when they enters his field of view
+	INTERACTION, ## It targets the player when they interacts with it
+	ATTACK ## It targets the player in response of its atatck
 }
 
-## C'est la race du Chieng
-@export var race : String 
-@export var description : String
-@export var hpMax : int
-var hp : int
-@export var isInvincible : bool
-@export var isTrackingPlayer : bool # ?
+@export var race : races ## The entity's race
+@export var description : String ## A brief description of the entity's lore
+@export var hpMax : int ## The maximum amount of health points
+var hp : int ## The current amount of health points
+@export var isInvincible : bool ## Defines wheather or not it can die
+@export var isTrackingPlayer : bool ## Definies wheter or not it follows the player
 
 
-@export var speed : int
+@export var speed : int ## Defines the entity's speed
 @onready var navigation_agent_3d = $NavigationAgent3D
 
 var last_time_pterg_pos_chg : float
@@ -49,20 +56,20 @@ var time_reach_targ_pos : float
 # variable for camp behavior in passive mode
 @export_subgroup("Camp passive mode")
 var spawn_point : Vector3
-@export var radius : float
+@export var radius : float ## Radius of the zone, it randomly moves in
 
 # variable for following path behavior in passive mode
 @export_subgroup("Following path passive mode")
-@export var list_of_position : Array
+@export var list_of_position : Array ## Array containing the coordinates the entity has to reach along its path
 var current_position_in_list : int
-@export var reverse : int
+@export var reverse : int ## Refer to the passive_movement func doc (may change later)
 
 # variable for aggressive mode
 @export_subgroup("Aggressive mode")
 var position_status_change : Array
-@export var cac_distance : float
-@export var dist_distance : float
-@export var stop_fleeing_distance : float
+@export var melee_distance : float ## Distance under which the entity attacks in melee
+@export var dist_distance : float ## Distance at which the entity wants shoot the player
+@export var stop_fleeing_distance : float ## Distance at which the entity will stop targeting the player
 
 
 func movement()->Vector3:
@@ -87,9 +94,9 @@ func aggressive_movement() -> Vector3:
 	elif aMode == aggressiveMode.DISTANCE:
 		res = MovementAggressive.distanceBehavior(position, player_position, position_status_change)
 	elif aMode == aggressiveMode.MELEE:
-		res = MovementAggressive.cacBehavior(position, player_position, position_status_change)
+		res = MovementAggressive.meleeBehavior(position, player_position, position_status_change)
 	elif aMode == aggressiveMode.DISTMELEE:
-		res = MovementAggressive.cacDistBehavior(position, player_position, position_status_change)
+		res = MovementAggressive.meleeDistBehavior(position, player_position, position_status_change)
 	else:
 		res = position
 	return res
@@ -139,7 +146,7 @@ func _ready() -> void:
 	isTrackingPlayer = false
 	last_time_pterg_pos_chg = Time.get_ticks_msec()
 	time_reach_targ_pos = Time.get_ticks_msec()
-	position_status_change = [cac_distance, dist_distance]
+	position_status_change = [melee_distance, dist_distance]
 	
 	
 
