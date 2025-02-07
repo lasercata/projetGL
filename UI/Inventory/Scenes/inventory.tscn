@@ -222,4 +222,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_g1ylu")
+item_count = 1
+item_0/text = "item direct"
 script = ExtResource("4_y58oj")

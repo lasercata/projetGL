@@ -14,18 +14,27 @@ func _process(delta: float) -> void:
 
 # Test function
 func testItemList() -> void:
-	var testItem : Item
+	var testItem : Item = Item.new()
 	testItem.name = "un item"
-	var testItemAmount : ItemAmount
-	testItemAmount.item = testItem
-	testItemAmount.amount += 1
+	var testItemAmount : ItemAmount = ItemAmount.new(testItem, 1)
 	update_item_display(testItemAmount)
+	var testItem2 : Item = Item.new()
+	testItem2.name = "un autre item"
+	var testItemAmount2 : ItemAmount = ItemAmount.new(testItem2, 1)
+	update_item_display(testItemAmount2)
+	var testItem3 : Item = Item.new()
+	testItem3.name = "item3"
+	var testItemAmount3 : ItemAmount = ItemAmount.new(testItem3, 2)
+	update_item_display(testItemAmount3)
 
 func update_item_display(item_amount: ItemAmount) -> void:
+	# search item place in inventory (-1 if not found) 
 	var item_id = _find_item_in_list(item_amount)
+	#var item_id = _find_item_in_list(item_amount.item)
+	# create the text to display in inventory
 	var item_text = "%s : %d" % [item_amount.item.name, item_amount.amount]
 	
-	# if item not on the list, display a new one
+	# if item not on the list, display it in another inventory line
 	if item_id == -1:
 		add_item(item_text) #add_item(item_text, item_amount.item.inventory_texture)
 		item_id = get_item_count() - 1
@@ -39,8 +48,10 @@ func update_item_display(item_amount: ItemAmount) -> void:
 
 # Search the item in the list
 func _find_item_in_list(item_amount: ItemAmount) -> int:
+#func _find_item_in_list(item: Item) -> int:
 	for i in range (get_item_count()):
 		if item_amount == get_item_metadata(i):
+		#if item.name == get_item_metadata(i).item.name:
 			return i
 	return -1
 

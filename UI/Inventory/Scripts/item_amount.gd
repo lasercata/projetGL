@@ -6,6 +6,6 @@ class_name ItemAmount
 var amount: int = 0
 var item: Item = null
 
-func _init(_amount: int, _item: Item) -> void:
+func _init(_item: Item,_amount: int) -> void:
 	amount = _amount
 	item = _item

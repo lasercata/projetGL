@@ -23,7 +23,7 @@ func _append_item(item: Item, amount: int = 1) -> void:
 	var item_amount = null
 	if (item_amount_id==-1):
 		# if we don't have it, we add it to the inventory
-		item_amount = ItemAmount.new(amount, item)
+		item_amount = ItemAmount.new(item, amount)
 		item_list.append(item_amount)
 	else : 
 		# else, we addition the amount 
