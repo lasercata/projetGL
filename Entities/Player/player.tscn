@@ -98,7 +98,7 @@ show_laser = 2
 laser_length = 1
 
 [node name="FunctionPickup" parent="RightHand" instance=ExtResource("1_v7mbb")]
-grab_distance = 0.05
+ranged_distance = 1.0
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_kh7mg")]
 
