@@ -7,7 +7,6 @@ var debugMenu_scene # debug scene
 var zone # the zone where the hand is
 var area2 # the area where the hand is
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# set the scene for the debug menu
@@ -56,9 +55,7 @@ func set_angular():
 
 
 func destroy():
-	
 	var player_scene = get_parent_node_3d() # get the player scene
-	
 	var areaSpellMenu = player_scene.get_node("RightHand").get_node("AreaSpellMenu").get_node("MeshInstance3D") #get the scen of the cursor for selection
 	areaSpellMenu.visible = false # disabled the visibility of the cursor for selection
 	
@@ -72,13 +69,16 @@ func _on_red_area_entered(area: Area3D) -> void:
 	area2 = area # set area2 for the debug menu
 	if area.name == "AreaSpellMenu": # check if the area is the good one
 		zone = "red" # set the variable zone in function of which zone the cursor entered
+		get_parent_node_3d().equiped_spell = "res://Spells/Fireball/Scenes/bole.tscn"
 
 func _on_green_area_entered(area: Area3D) -> void:
 	area2 = area # set area2 for the debug menu
 	if area.name == "AreaSpellMenu": # check if the area is the good one
 		zone = "green" # set the variable zone in function of which zone the cursor entered
+		get_parent_node_3d().equiped_spell = "res://Spells/Fireball/Scenes/poison_bole.tscn"
 
 func _on_blue_area_entered(area: Area3D) -> void:
 	area2 = area # set area2 for the debug menu
 	if area.name == "AreaSpellMenu": # check if the area is the good one
 		zone = "blue" # set the variable zone in function of which zone the cursor entered
+		get_parent_node_3d().equiped_spell = "res://Spells/Fireball/Scenes/ice_bole.tscn"

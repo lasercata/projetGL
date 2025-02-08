@@ -9,6 +9,8 @@ extends Node3D
 
 signal hit_by_ennemy(damage)
 
+var equiped_spell = "res://Spells/Fireball/Scenes/bole.tscn"
+
 # test values, rememmber to remove !!!
 var counter = 0
 var btn_presed
@@ -58,7 +60,7 @@ func _on_left_hand_button_pressed(name):
 	if name == "ax_button":
 		var scene = get_parent_node_3d().get_node("Spell")
 		#var spell_path = scene.whichSpell("fireball")
-		var spell_scene = load("res://Spells/Fireball/Scenes/bole.tscn").instantiate()
+		var spell_scene = load(equiped_spell).instantiate()
 		scene.add_child(spell_scene)
 		
 	if name == "menu_button":
