@@ -13,6 +13,11 @@ var counter = 0
 var btn_presed
 var incr = 0
 
+
+func _ready() -> void:
+	var areaSpellMenu = get_node("RightHand").get_node("AreaSpellMenu").get_node("MeshInstance3D")
+	areaSpellMenu.visible = false
+	
 func _process(delta: float) -> void:
 	counter += 1
 	# print(debugMenu_scene.get_content())
