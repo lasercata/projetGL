@@ -19,7 +19,6 @@ height = 20
 
 [node name="Creature" type="CharacterBody3D"]
 script = ExtResource("1_pp2u2")
-race = "Chieng"
 description = "c'est un Chieng"
 hpMax = 10
 
