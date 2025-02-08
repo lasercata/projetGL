@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd5le1v57c30r"]
+[gd_scene load_steps=21 format=3 uid="uid://cd5le1v57c30r"]
 
 [ext_resource type="Script" path="res://Entities/Player/Scripts/collisionScript.gd" id="1_h3dvg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="1_v7mbb"]
@@ -34,6 +34,12 @@ gradient = SubResource("Gradient_8qsk5")
 width = 10
 height = 1
 fill_to = Vector2(1, 0.0862069)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ek2wj"]
+size = Vector3(0.01, 0.01, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8op1t"]
+size = Vector3(0.01, 0.01, 0.3)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rdg41"]
 radius = 0.38998
@@ -108,6 +114,14 @@ visible = false
 show_laser = 2
 laser_length = 1
 
+[node name="AreaSpellMenu" type="Area3D" parent="RightHand"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/AreaSpellMenu"]
+shape = SubResource("BoxShape3D_ek2wj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightHand/AreaSpellMenu"]
+mesh = SubResource("BoxMesh_8op1t")
+
 [node name="PlayerBody" parent="." instance=ExtResource("6_kh7mg")]
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -123,5 +137,6 @@ shape = SubResource("CapsuleShape3D_rdg41")
 [connection signal="button_pressed" from="LeftHand" to="." method="_on_left_hand_button_pressed"]
 [connection signal="button_released" from="LeftHand" to="." method="_on_left_hand_button_released"]
 [connection signal="button_pressed" from="RightHand" to="." method="_on_right_hand_button_pressed"]
+[connection signal="button_released" from="RightHand" to="." method="_on_right_hand_button_released"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
