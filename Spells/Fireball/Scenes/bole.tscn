@@ -10,8 +10,9 @@ radius = 0.1
 diffuse_mode = 1
 disable_ambient_light = true
 disable_fog = true
+albedo_color = Color(0.942472, 0.465618, 0.430259, 1)
 emission_enabled = true
-emission = Color(0.917647, 0.490196, 0.168627, 1)
+emission = Color(0.990835, 0.416279, 0.239364, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_rorgn"]
 lightmap_size_hint = Vector2i(5, 3)

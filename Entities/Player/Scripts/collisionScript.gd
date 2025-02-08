@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 
 @onready var pauseMenu = $LeftHand/pause_menu
 @onready var debugMenu = $LeftHand/debug_menu
@@ -37,10 +37,22 @@ func _on_right_hand_button_pressed(name):
 
 func _on_left_hand_button_pressed(name):
 	btn_presed = name
-	if name == "ax_button":
+	if name == "by_button":
 		debugMenu.visible = !debugMenu.visible
+	if name == "ax_button":
+		var scene = get_parent_node_3d().get_node("Spell")
+		#var spell_path = scene.whichSpell("fireball")
+		var spell_scene = load("res://Spells/Fireball/Scenes/bole.tscn").instantiate()
+		scene.add_child(spell_scene)
+		
 	if name == "menu_button":
 		Global.exit_menu()
 		get_tree().paused = !get_tree().paused
 		pauseMenu.visible = !pauseMenu.visible
 		FunctionPointer.visible = !FunctionPointer.visible
+
+func _on_left_hand_button_released(name: String) -> void:
+	if(name == "ax_button"):
+		var scene = get_parent_node_3d().get_node("Spell")
+		for bole in scene.get_children():
+			bole.mode = 1
