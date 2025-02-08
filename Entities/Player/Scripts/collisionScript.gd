@@ -37,15 +37,14 @@ func _on_right_hand_button_pressed(name):
 	if name == 'by_button':
 		pass
 	if name == 'ax_button':
-		# create the menu for spell selection
+		# create the menu for spell selection when the button is pressed
 		var spell_menu = load("res://UI/Scenes/SpellMenu.tscn")
 		var player_scene = get_tree().current_scene.get_node("Player")
-		incr = player_scene
 		player_scene.add_child(spell_menu.instantiate())
 		
 func _on_right_hand_button_released(name):
 	if name == 'ax_button':
-		# create the menu for spell selection
+		# destroy the menu for spell selection when the button is released
 		var spell_menu_scene = get_tree().current_scene.get_node("Player").get_node("SpellMenu")
 		spell_menu_scene.destroy()
 
