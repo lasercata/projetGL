@@ -37,7 +37,7 @@ albedo_color = Color(0, 0, 1, 1)
 material = SubResource("StandardMaterial3D_cyf4y")
 size = Vector3(0.1, 0.1, 0.1)
 
-[node name="Test" type="Node3D"]
+[node name="Test2" type="Node3D"]
 script = ExtResource("1_n42gy")
 
 [node name="Entity" type="Node3D" parent="."]
@@ -46,9 +46,7 @@ script = ExtResource("1_n42gy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 speed = 4
 radius = 5.0
-cac_distance = 5.0
 dist_distance = 7.5
-stop_feeling_distance = 10.0
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_30i32")
