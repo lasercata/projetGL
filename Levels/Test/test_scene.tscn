@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cv61u1e5ae2ib" path="res://Levels/Test/Scenes/grid_map_test.tscn" id="5_7l8hj"]
 [ext_resource type="PackedScene" uid="uid://cwru8wjnyjiks" path="res://Levels/Test/Scenes/lever.tscn" id="7_6u1dy"]
 [ext_resource type="PackedScene" uid="uid://3be1vp1kq1iy" path="res://Items/Equipment/Weapon/Sword/Scenes/diamond_sword.tscn" id="7_wfsy7"]
-[ext_resource type="PackedScene" uid="uid://ccouf68xua5s7" path="res://Entities/Creature/Scenes/Tuto.tscn" id="9_oxl8l"]
+[ext_resource type="PackedScene" path="res://Entities/Creature/Scenes/Tuto.tscn" id="9_oxl8l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ecyma"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -89,5 +89,6 @@ stop_fleeing_distance = 10.0
 
 [node name="Creature" parent="Enity" instance=ExtResource("4_euvt4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3241, 1.15658, 3.30514)
-race = 0
 isInvincible = true
+
+[node name="Spell" type="Node3D" parent="."]
