@@ -5,7 +5,7 @@ This is a virtual reality video game developped for a software engineering proje
 **Next, you'll find an installation guide to try our game.**  
 But if you're a programmer and want to dive deeper into the project, check out our wiki where we document every major feature to help you in your coding journey! 🚀  
 
-[![Wiki](https://img.shields.io/badge/Wiki-Explore-blue?style=for-the-badge&logo=github)](https://github.com/YOUR_USER/YOUR_REPO/wiki)  
+[![Wiki](https://img.shields.io/badge/Wiki-Explore-blue?style=for-the-badge&logo=github)](https://github.com/dallatIkes/projetGL/wiki)  
   
 Thank you for playing our game on behalf of the whole team, if you want to contact us, feel free to join our [official discord server](https://discord.gg/QdvcnQ6rES). Enjoy! 😉  
 
