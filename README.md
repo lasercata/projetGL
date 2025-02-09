@@ -103,3 +103,7 @@ If you already have an `.apk` file, use the **Meta Quest Developer Hub** app to 
 ![Meta Quest Developer Hub](https://github.com/user-attachments/assets/a195d304-410e-4b30-b546-218da67ff1cf)
 
 That’s it! 🚀 Enjoy your game on VR! 🎮
+
+---
+
+[![Discord](https://img.shields.io/discord/1291668818590044201?color=5865F2&logo=discord&logoColor=white)](https://discord.gg/QdvcnQ6rES)
