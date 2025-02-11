@@ -9,10 +9,10 @@ signal unequipment(old_stats)
 @export var description : String
 @export var stats : Statistics
 
-func equip() -> void:
-	equipment.emit(stats)
-	pass
+# func equip() -> void:
+#	equipment.emit(stats)
+#	pass
 
-func unequip() -> void:
-	unequipment.emit(stats)
-	pass
+#func unequip() -> void:
+#	unequipment.emit(stats)
+#	pass
