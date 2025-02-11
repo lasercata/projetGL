@@ -2,15 +2,35 @@
 extends ItemList
 class_name InventoryItemList
 
+var selected_item_id = -1 
+
+signal selected_item_id_changed(id)
+
+### ACCESSORS ###
+
+func set_selected_item_id(value: int) -> void:
+	if value == -1 :
+		selected_item_id = value
+	else :
+		selected_item_id = wrapi(value, 0, get_item_count()) # wrap is a modulo function
+	emit_signal("selected_item_id_changed")
+
+func get_selected_item_id() -> int:
+	return selected_item_id
+
+### BUILT-IN ###
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#var __ = connect("selected_item_id_changed",_on_selected_item_id_changed)
 	testItemList()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+### DEBUG & TEST ##
 
 # Test function
 func testItemList() -> void:
@@ -26,6 +46,8 @@ func testItemList() -> void:
 	testItem3.name = "item3"
 	var testItemAmount3 : ItemAmount = ItemAmount.new(testItem3, 2)
 	update_item_display(testItemAmount3)
+
+### LOGIC ###
 
 func update_item_display(item_amount: ItemAmount) -> void:
 	# search item place in inventory (-1 if not found) 
@@ -55,16 +77,21 @@ func _find_item_in_list(item_amount: ItemAmount) -> int:
 			return i
 	return -1
 
+# Select another item
+func _update_selected_item() -> void:
+	if selected_item_id == -1:
+		deselect_all() 
+	select(selected_item_id)
 
-
+### SIGNALS ###
 
 func _on_inventory_data_manager_item_added(item_amount: ItemAmount) -> void:
 	update_item_display(item_amount)
 
-
 func _on_inventory_data_manager_item_removed(item_amount: ItemAmount) -> void:
 	update_item_display(item_amount)
 
-
+func _on_selected_item_id_changed(id: int) -> void:
+	pass
 
 # If we have no collectible object, every ItemAmount can be changed for Item

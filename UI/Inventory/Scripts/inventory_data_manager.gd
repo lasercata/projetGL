@@ -11,7 +11,7 @@ signal item_removed(item_amount)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#var __  = EVENTS.connect("object_collected", self, "_on_EVENTS_object_collected")
+	#var __  = connect("object_collected", _on_EVENTS_object_collected)
 	pass
 
 ### LOGIC ###
