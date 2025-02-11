@@ -37,7 +37,7 @@ script = ExtResource("1_wl4ie")
 environment = SubResource("Environment_x4xqt")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.841599, 0.297974, 0.450468, 0.538579, 0.525599, 0.658543, -0.0405372, 0.796842, -0.602826, 0.0184803, 7.14253, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 light_energy = 0.4
 shadow_enabled = true
 
@@ -67,7 +67,8 @@ transform = Transform3D(0.999979, 0, 0.00640531, 0, 1, 0, -0.00640531, 0, 0.9999
 collision_mask = 196617
 
 [node name="Lever" parent="." instance=ExtResource("7_6u1dy")]
-transform = Transform3D(2.18557e-08, 0.5, 4.47035e-08, 0.5, -2.18557e-08, 0, 1.33227e-15, 4.47035e-08, -0.5, -29.4746, 1.75952, 0)
+transform = Transform3D(-1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0, 0.3, -29.4726, 1.83711, 0)
+lever_position = 1
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_bw2fv")
